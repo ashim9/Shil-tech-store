@@ -1,28 +1,67 @@
 <section class="section-wrapper-{{ section.id }}">
-    {% for block in section.blocks%}
+    {% for block in section.blocks %}
         {% case block.type %}
-        {% when "text-block" %}
-            <div class="text-block-{{ block.id }}">
-                <div class="block-{{ block.id }}-width-{{ block.setting.blog.width }}"> {{ block.settings.text-content }}</div>
-            </div>
-        {% when "space-block" %}
-        <div class="spacer-{{ block.id }}"></div>
-        {% comment %} {% when "heading-block" %}
-        <div class="heading-{{ block.id }}"></div> {% endcomment %}
-        {% comment %} {%- when 'heading-block' -%} {% endcomment %}
-            {% comment %} <h2 class=" {{ block.settings.heading_size }}"> {% endcomment %}
-            {% comment %} <h2 class=" {{ block.settings.heading-alignment }}">
-              <span>{{ block.settings.heading | escape }}</span>
-            </h2> {% endcomment %}
+            {% when "text-block" %}
+                <div class="text-block-{{ block.id }}">
+                    <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }}"> {{ block.settings.text-content }}</div>
+                </div>
 
-             {%- when 'heading-block' -%}
-              <h2 class="rich-text__heading rte {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}" {{ block.shopify_attributes }}>
-                {{ block.settings.heading | replace: 'p>', 'span>' }}
-              </h2>
+
+            {% when "space-block" %}
+            <div class="spacer-{{ block.id }}"></div>
+            {% comment %} {% when "heading-block" %}
+            <div class="heading-{{ block.id }}"></div> {% endcomment %}
+            {% comment %} {%- when 'heading-block' -%} {% endcomment %}
+                {% comment %} <h2 class=" {{ block.settings.heading_size }}"> {% endcomment %}
+                {% comment %} <h2 class=" {{ block.settings.heading-alignment }}">
+                <span>{{ block.settings.heading | escape }}</span>
+                </h2> {% endcomment %}
+
+            {%- when 'heading-block' -%}
+                <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}" {{ block.shopify_attributes }}>
+                    {{ block.settings.heading | replace: 'p>', 'span>' }}
+                </h2>
+
+            {%- when "image" -%}
+                <div class="img-wrapper">
+                    <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
+                </div>   
+
         {% endcase %}
     {% endfor %}
 </section>
 
+
+<style>
+    {% for block in section.blocks %}
+    {% case block.type %}
+     {% when "text-block" %}
+
+    {%- when "image" -%}   
+        .img-wrapper{
+            width: 100%;
+            margin: auto;
+        }
+        .image-{{ block.id }}{
+            width:100%
+        }
+        {% if block.settings.height == 'Large' %}
+            .img-wrapper{
+                width: 100%;
+            }
+            {% elsif block.settings.height == 'medium' %}
+            .img-wrapper{
+                width: 60%;
+            }
+            {% elsif block.settings.height == 'small' %}
+            .img-wrapper{
+                width: 30%;
+            }
+        {% endif %}
+  
+    {% endcase %}
+    {% endfor %}
+</style>
 {% comment %} <style>
     {% for block in section.blocks %}
         {% case block.type %}
@@ -200,64 +239,55 @@
             "type": "heading-block",
             "name": "Heading",
             "limit": 1,
-            "settings": [
-                // {
-                //     "type": "text",
-                //     "id": "heading",
-                //     "default": "Hola, Welcome Boss!",
-                //     "label": "Text"
-                // },
-                
+            "settings": [            
                 {
                     "type": "text",
                     "id": "heading",
                     "default": "404 - Page Not Found",
                     "label": "Heading"
                 },
-                    {
-                        "type": "select",
-                        "id": "heading_size",
-                        "options": [
-                            {
-                            "value": "h1",
-                            "label": "Medium"
-                            },
-                            {
-                            "value": "h0",
-                            "label": "Large"
-                            },
-                            {
-                            "value": "hxl",
-                            "label": "Extra Large"
-                            }
-                        ],
-                        "default": "h1",
-                        "label": "t:sections.all.heading_size.label"
-                    },
-                    {
+                {
                     "type": "select",
+                    "label": "Text Size",
+                    "id": "heading_size",
+                    "options": [
+                        {
+                        "value": "h1",
+                        "label": "Medium"
+                        },
+                        {
+                        "value": "h0",
+                        "label": "Large"
+                        },
+                        {
+                        "value": "hxl",
+                        "label": "Extra Large"
+                        }
+                    ],
+                    "default": "h1"
+                },
+                {
+                    "type": "select",
+                    "label": "Text Align",
                     "id": "heading-alignment", 
                     "options": [
                         {
                         "value": "left",
-                        "label": "text-left"
+                        "label": "Left"
                         },
                         {
                         "value": "center",
-                        "label": "text-center"
+                        "label": "Center"
                         },
                         {
                         "value": "right",
-                        "label": "text-right"
+                        "label": "Right"
                         }
                     ],
-                    "default": "center",
-                    "label": "text-center"
-                }
-                
+                    "default": "center"
+                }             
             ]
         },
-
         {
             "type": "spacer-block",
             "name": "Spacer",
@@ -271,6 +301,37 @@
                     "step": 5,
                     "unit": "px",
                     "default": 30
+                }
+            ]
+        },
+        {
+            "type": "image",
+            "name": "Wax Image",
+            "settings":[
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Wax-Image"
+                },
+                {
+                    "type": "select",
+                    "id": "height",
+                    "label": "Image Size",
+                    "options": [
+                       {
+                        "value": "medium",
+                        "label": "Medium"
+                        },
+                        {
+                        "value": "small",
+                        "label": "Small"
+                        },
+                        {
+                        "value": "large",
+                        "label": "Large"
+                        }
+                    ],
+                    "default": "medium"
                 }
             ]
         }
