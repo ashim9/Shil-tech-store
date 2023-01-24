@@ -3,7 +3,7 @@
         {% case block.type %}
             {% when "text-block" %}
                 <div class="text-block-{{ block.id }}">
-                    <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }}"> {{ block.settings.text-content }}</div>
+                    <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }} text-block"> {{ block.settings.text-content }}</div>
                 </div>
             {% when "spacer-block" %}
                 <div class="spacer-{{ block.id }}"></div>
@@ -17,7 +17,7 @@
 
             {%- when 'heading-block' -%}
                 <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.heading | replace: 'p>', 'span>' }}
+                    {{ block.settings.heading }}
                 </h2>
             {%- when "image" -%}
                 <div class="img-wrapper">
@@ -29,6 +29,10 @@
 
 
 <style>
+    .section-wrapper-{{ section.id }}{
+        max-width: 550px;
+        margin: auto;
+    }
     {% for block in section.blocks %}
     {% case block.type %}
     {%- when "image" -%}   
@@ -44,11 +48,11 @@
             .img-wrapper{
                 width: 100%;
             }
-            {% elsif block.settings.height == 'medium' %}
+        {% elsif block.settings.height == 'medium' %}
             .img-wrapper{
                 width: 60%;
             }
-            {% elsif block.settings.height == 'small' %}
+        {% elsif block.settings.height == 'small' %}
             .img-wrapper{
                 width: 30%;
             }
@@ -58,6 +62,9 @@
             height: {{ block.settings.spacer-height }}px;
         }
     {% when "text-block" %}
+        .text-block a{
+            color: #000;
+        }
         .block-{{ block.id }}-width-small{
             max-width: 576px;
             margin: 0 auto;
@@ -77,19 +84,18 @@
             padding: 0 30px;
         }
         .block-{{ block.id }}-width-custom{
-            max-width: {{ block.settings.custom-block-width | append: "px"}}
+            max-width: {{ block.settings.custom-block-width | append: "px" }};
             margin: 0 auto;
         }
         .section-wrapper-{{ section.id }} .text-block-{{ block.id }} p{
             font-size: {{ block.settings.font-size | append: "px" }};
             font-family: {{ block.settings.font }};
-            color: {{ block.settings.text.color }};
+            color: {{ block.settings.text-color }};
             line-height: {{ block.settings.line-height }}px;
          }
         .section-wrapper-{{ section.id }} .text-block-{{ block.id }}{
             text-align: center;
         }
-
     {% endcase %}
     {% endfor %}
 </style>
@@ -154,37 +160,37 @@
                     "type": "richtext",
                     "id" : "text-content",
                     "label" : "Change text block",
-                    "default": "<p>Hello World</p>"
+                    "default": "<p>Oops, it looks like the page you are looking for is no longer here...<br> Choose one of the links below or <a href='https://waxlondon.com/'> click here to return home. </a> </p>"
                 },
                 {
                     "type": "range",
                     "id": "font-size",
-                    "label": "Change Text block",
+                    "label": "Change Font Size",
                     "min": 12,
                     "max": 50,
                     "step": 1,
                     "unit": "px",
                     "default": 16
                 },
+                // {
+                //     "type": "range",
+                //     "id": "mobile-font-size",
+                //     "label": "mobile font size",
+                //     "min": 12,
+                //     "max": 50,
+                //     "step": 1,
+                //     "unit": "px",
+                //     "default": 16
+                // },
                 {
                     "type": "range",
-                    "id": "mobile-font-size",
-                    "label": "mobile font size",
-                    "min": 12,
-                    "max": 50,
-                    "step": 1,
-                    "unit": "px",
-                    "default": 16
-                },
-                {
-                    "type": "range",
-                    "id": "mobile-line-height",
+                    "id": "line-height",
                     "min": 10,
                     "max": 50,
                     "step": 1,
                     "unit": "px",
-                    "default": 37,
-                    "label": "Mobile line height"
+                    "default": 28,
+                    "label": "Line height"
                 },
                 {
                     "type": "font",
@@ -220,17 +226,17 @@
                         }
                     ],
                     "default": "medium"
-                },
-                {
-                    "type": "range",
-                    "id": "custom-block-width",
-                    "label": "Custom block width",
-                    "min": 200,
-                    "max": 1900,
-                    "step": 50,
-                    "unit": "px",
-                    "default": 800
                 }
+                // {
+                //     "type": "range",
+                //     "id": "custom-block-width",
+                //     "label": "Custom block width",
+                //     "min": 200,
+                //     "max": 1900,
+                //     "step": 50,
+                //     "unit": "px",
+                //     "default": 800
+                // }
             ]
         },
         // {
