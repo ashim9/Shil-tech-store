@@ -5,10 +5,8 @@
                 <div class="text-block-{{ block.id }}">
                     <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }}"> {{ block.settings.text-content }}</div>
                 </div>
-
-
-            {% when "space-block" %}
-            <div class="spacer-{{ block.id }}"></div>
+            {% when "spacer-block" %}
+                <div class="spacer-{{ block.id }}"></div>
             {% comment %} {% when "heading-block" %}
             <div class="heading-{{ block.id }}"></div> {% endcomment %}
             {% comment %} {%- when 'heading-block' -%} {% endcomment %}
@@ -21,12 +19,10 @@
                 <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}" {{ block.shopify_attributes }}>
                     {{ block.settings.heading | replace: 'p>', 'span>' }}
                 </h2>
-
             {%- when "image" -%}
                 <div class="img-wrapper">
                     <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
                 </div>   
-
         {% endcase %}
     {% endfor %}
 </section>
@@ -35,15 +31,14 @@
 <style>
     {% for block in section.blocks %}
     {% case block.type %}
-     {% when "text-block" %}
-
     {%- when "image" -%}   
         .img-wrapper{
             width: 100%;
             margin: auto;
         }
         .image-{{ block.id }}{
-            width:100%
+            width: 100%;
+            display: block;
         }
         {% if block.settings.height == 'Large' %}
             .img-wrapper{
@@ -58,7 +53,43 @@
                 width: 30%;
             }
         {% endif %}
-  
+    {%- when 'spacer-block' -%}
+        .spacer-{{ block.id }}{
+            height: {{ block.settings.spacer-height }}px;
+        }
+    {% when "text-block" %}
+        .block-{{ block.id }}-width-small{
+            max-width: 576px;
+            margin: 0 auto;
+        }
+        .block-{{ block.id }}-width-medium{
+            max-width: 576px;
+            margin: 0 auto;
+        }
+        .block-{{ block.id }}-width-small{
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        .block-{{ block.id }}-width-full{
+            max-width: 100%;
+        }
+        .block-{{ block.id }}-width-full p{
+            padding: 0 30px;
+        }
+        .block-{{ block.id }}-width-custom{
+            max-width: {{ block.settings.custom-block-width | append: "px"}}
+            margin: 0 auto;
+        }
+        .section-wrapper-{{ section.id }} .text-block-{{ block.id }} p{
+            font-size: {{ block.settings.font-size | append: "px" }};
+            font-family: {{ block.settings.font }};
+            color: {{ block.settings.text.color }};
+            line-height: {{ block.settings.line-height }}px;
+         }
+        .section-wrapper-{{ section.id }} .text-block-{{ block.id }}{
+            text-align: center;
+        }
+
     {% endcase %}
     {% endfor %}
 </style>
@@ -113,7 +144,7 @@
 
 {% schema %} 
 {
-    "name": "np-single-column-text",
+    "name": "wax-blog",
     "blocks": [
         {
             "name" : "text-block",
@@ -339,7 +370,7 @@
     "presets": [
         {
             "category":"content",
-            "name":"np-single-column-text"
+            "name":"wax-blog"
         }
     ]
 }
