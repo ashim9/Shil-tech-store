@@ -6,7 +6,7 @@
                     <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }} text-block"> {{ block.settings.text-content }}</div>
                 </div>
             {% when "spacer-block" %}
-                <div class="spacer-{{ block.id }}"></div>
+                <div class="spacer-{{ block.id }}"> </div>
             {% comment %} {% when "heading-block" %}
             <div class="heading-{{ block.id }}"></div> {% endcomment %}
             {% comment %} {%- when 'heading-block' -%} {% endcomment %}
@@ -16,8 +16,9 @@
                 </h2> {% endcomment %}
 
             {%- when 'heading-block' -%}
-                <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}" {{ block.shopify_attributes }}>
-                    {{ block.settings.heading }}
+                <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}">
+                    {{ block.settings.heading | replace: 'p>', 'span>' }}
+                    {% comment %} {{ block.settings.heading }} {% endcomment %}
                 </h2>
             {%- when "image" -%}
                 <div class="img-wrapper">
@@ -278,9 +279,9 @@
             "limit": 1,
             "settings": [            
                 {
-                    "type": "text",
+                    "type": "richtext",
                     "id": "heading",
-                    "default": "404 - Page Not Found",
+                    "default": "<p>404 - Page Not Found</p>",
                     "label": "Heading"
                 },
                 {
@@ -289,16 +290,16 @@
                     "id": "heading_size",
                     "options": [
                         {
+                        "value": "h2",
+                        "label": "Small"
+                        },
+                        {
                         "value": "h1",
                         "label": "Medium"
                         },
                         {
                         "value": "h0",
                         "label": "Large"
-                        },
-                        {
-                        "value": "hxl",
-                        "label": "Extra Large"
                         }
                     ],
                     "default": "h1"

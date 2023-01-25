@@ -1,0 +1,32 @@
+<section class="spacer-wrapper-{{ section.id }}">
+    <div class="spacer-{{ section.id }}"> </div> 
+</section>
+
+<style>
+    .spacer-{{ section.id }}{
+        height: {{ section.settings.spacer-height }}px;
+    }
+</style>
+
+{% schema %} 
+{
+    "name": "Spacer",
+    "settings": [
+        {
+            "type": "range",
+            "id": "spacer-height",
+            "label": "Spacer Height",
+            "min": 0,
+            "max": 200,
+            "step": 5,
+            "unit": "px",
+            "default": 30
+        }
+    ],
+    "presets": [
+        {
+            "name": "Spacer"
+        }
+    ]
+}
+{% endschema %}
