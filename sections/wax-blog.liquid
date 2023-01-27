@@ -31,7 +31,7 @@
 
 <style>
     .section-wrapper-{{ section.id }}{
-        max-width: 550px;
+        max-width: 600px;
         margin: auto;
     }
     {% for block in section.blocks %}
@@ -51,11 +51,11 @@
             }
         {% elsif block.settings.height == 'medium' %}
             .img-wrapper{
-                width: 60%;
+                width: 70%;
             }
         {% elsif block.settings.height == 'small' %}
             .img-wrapper{
-                width: 30%;
+                width: 40%;
             }
         {% endif %}
     {%- when 'spacer-block' -%}
@@ -369,14 +369,13 @@
                         "label": "Large"
                         }
                     ],
-                    "default": "medium"
+                    "default": "large"
                 }
             ]
         }
     ],
     "presets": [
         {
-            "category":"content",
             "name":"wax-blog"
         }
     ]
