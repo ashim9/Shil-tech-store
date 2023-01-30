@@ -63,9 +63,7 @@
             height: {{ block.settings.spacer-height }}px;
         }
     {% when "text-block" %}
-        .text-block a{
-            color: #000;
-        }
+        
         .block-{{ block.id }}-width-small{
             max-width: 576px;
             margin: 0 auto;
@@ -88,7 +86,8 @@
             max-width: {{ block.settings.custom-block-width | append: "px" }};
             margin: 0 auto;
         }
-        .section-wrapper-{{ section.id }} .text-block-{{ block.id }} p{
+        .section-wrapper-{{ section.id }} .text-block-{{ block.id }} p,
+        .section-wrapper-{{ section.id }} .text-block-{{ block.id }} a {
             font-size: {{ block.settings.font-size | append: "px" }};
             font-family: {{ block.settings.font }};
             color: {{ block.settings.text-color }};
@@ -161,7 +160,7 @@
                     "type": "richtext",
                     "id" : "text-content",
                     "label" : "Change text block",
-                    "default": "<p>Oops, it looks like the page you are looking for is no longer here...<br> Choose one of the links below or <a href='https://waxlondon.com/'> click here to return home. </a> </p>"
+                    "default": "<p>Oops, it looks like the page you are looking for is no longer here...<br> Choose one of the links below or click here to return home.</p>"
                 },
                 {
                     "type": "range",
@@ -202,7 +201,7 @@
                     "type": "color",
                     "id": "text-color",
                     "label": "Text Color",
-                    "default": "#000000"
+                    "default": "#333333"
                 }
                 // {
                 //     "type": "select",
