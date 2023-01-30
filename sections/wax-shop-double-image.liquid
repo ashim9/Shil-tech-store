@@ -1,0 +1,108 @@
+<section class="double-image-{{ section.id }}">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "double-image" %}
+                <div class="double-img-wrapper-{{ block.id }}">
+                    <div class="left-img">
+                         <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
+                    </div>
+                    <div class="right-img">
+                         <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
+                    </div>
+                </div>
+        {% endcase %}
+    {% endfor %}
+</section>
+<style>
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {%- when "double-image" -%} 
+                .double-img-wrapper-{{ block.id }} {
+                    width: 100%;
+                    display: flex;
+                    gap: {{ block.settings.gap | append: 'px' }};
+                }
+                .left-img, .right-img{
+                    flex: 1;
+                }
+                .left-img img, .right-img img{
+                    width: 100%;
+                    display: block;
+                }
+                   {% if block.settings.width == 'Large' %}
+                        .img-wrapper-{{ block.id }}{
+                            width: 100%;
+                        }
+                    {% elsif block.settings.width == 'medium' %}
+                        .img-wrapper-{{ block.id }}{
+                            width: 75%;
+                            margin: auto;
+                        }
+                    {% elsif block.settings.width == 'small' %}
+                        .img-wrapper-{{ block.id }}{
+                            width: 50%;
+                            margin: auto;
+                        }
+                    {% endif %}
+        {% endcase %}
+    {% endfor %}
+</style>
+
+{% schema %}
+    {
+    "name" : "Double Image",
+    "blocks": [
+        {
+            "name" : "double image",
+            "type" : "double-image",
+            "settings" :[
+                {
+                    "type": "image_picker",
+                    "id": "left_image",
+                    "label": "Single-Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "right_image",
+                    "label": "Single-Image"
+                },
+                {
+                    "type": "range",
+                    "id": "gap",
+                    "label": "Gap",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "select",
+                    "id": "width",
+                    "label": "Image Width",
+                    "options": [
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    }, 
+                    {
+                        "value": "small",
+                        "label": "Half Width"
+                    }, 
+                    {
+                        "value": "large",
+                        "label": "Full Width"
+                    }
+                    ],
+                    "default": "small"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Double Image"
+      }
+    ]
+}
+{% endschema %}
