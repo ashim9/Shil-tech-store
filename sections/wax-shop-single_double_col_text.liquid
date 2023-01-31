@@ -1,39 +1,65 @@
-<section class="text_wrapper-{{ section.id }}">
-    {% for block in section.blocks %}
-        {% case block.type %}
-            {% when "single-text-block" %}
-                <div class="single-text-block-wrapper-{{ block.id }}">
-                    {{ block.settings.single-text-content }}
-                </div>
-            {% when "double-text-block" %}
-                <div class="double-text-block-wrapper-{{ block.id }}">
-                    <div class="left_text">
-                        {{ block.settings.double-text-content-left }}
+<div class="container">
+    <div class="text_wrapper-{{ section.id }}">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when "single-text-block" %}
+                    <div class="single-text-block-wrapper-{{ block.id }}">
+                        {{ block.settings.single-text-content }}
                     </div>
-                    <div class="right_text">
-                        {{ block.settings.double-text-content-right }}
-                    </div>
-                </div> 
-            {% when "spacer-block" %}
-                <div class="spacer-{{ block.id }}"> </div>
-        {% endcase %}
-    {% endfor %}
-</section>
+                {% when "double-text-block" %}
+                    <div class="double-text-block-wrapper-{{ block.id }}">
+                        <div class="left_text">
+                            {{ block.settings.double-text-content-left }}
+                        </div>
+                        <div class="right_text">
+                            {{ block.settings.double-text-content-right }}
+                        </div>
+                    </div> 
+                {% when "spacer-block" %}
+                    <div class="spacer-{{ block.id }}"> </div>
+            {% endcase %}
+        {% endfor %}
+    </div>
+</div>
 
 <style>
+    .container{
+        background-color:#F2F2F2;
+        width: 100%;
+    }
     {% for block in section.blocks %}
     {% case block.type %}
     {%- when "single-text-block" -%} 
         .single-text-block-wrapper-{{ block.id }} {
-            max-width: 600px;
+            min-width: 600px;
             margin: auto;
         }
         .single-text-block-wrapper-{{ block.id }} p {
             font-size: {{ block.settings.font-size | append: 'px' }};
             line-height: {{ block.settings.line-height | append: 'px' }};
             font-family: {{ block.settings.font }};
-            color: {{ block.settings.text-color }}
-          }
+            color: {{ block.settings.text-color }};
+            margin: 0;
+        }
+        {% if block.settings.section-width == "large" %}
+            div.single-text-block-wrapper-{{ block.id }}{
+                width: 100%;
+            }
+        {% elsif block.settings.section-width == "medium" %}
+            div.single-text-block-wrapper-{{ block.id }}{
+                width: 75%;
+            }
+        {% elsif block.settings.section-width == "small" %}
+            div.single-text-block-wrapper-{{ block.id }}{
+                width: 50%;
+            }
+        {% elsif block.settings.section-width ==  "custom" %}
+            div.single-text-block-wrapper-{{ block.id }}
+            {
+                width: {{ block.settings.custom-width }}%;
+            }
+        {% endif %}
+
     {%- when "double-text-block" -%} 
         .double-text-block-wrapper-{{ block.id }} p{
             font-size: {{ block.settings.font-size | append: 'px' }};
@@ -74,6 +100,40 @@
                     "id" : "single-text-content",
                     "label" : "Change text content",
                     "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam.</p>"
+                },
+                {
+                    "type": "select",
+                    "id": "section-width",
+                    "label": "Section Width",
+                    "options": [
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    }, 
+                    {
+                        "value": "small",
+                        "label": "Small"
+                    }, 
+                    {
+                        "value": "large",
+                        "label": "Full Width"
+                    },
+                    {
+                        "value": "custom",
+                        "label": "Custom Width"
+                    }
+                    ],
+                    "default": "small"
+                },
+                 {
+                    "type": "range",
+                    "id": "custom-width",
+                    "label": "Custom Width",
+                    "min": 50,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "default": 50
                 },
                 {
                     "type": "range",

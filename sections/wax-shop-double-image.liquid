@@ -1,17 +1,19 @@
-<section class="double-image-{{ section.id }}">
-    {% for block in section.blocks %}
-        {% case block.type %}
-            {% when "double-image" %}
-                <div class="double-img-wrapper-{{ block.id }}">
-                    <div class="left-img">
-                         <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
+<section class="container">
+    <div class="double-image-{{ section.id }}">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when "double-image" %}
+                    <div class="double-img-wrapper-{{ block.id }}">
+                        <div class="left-img">
+                             <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
+                        </div>
+                        <div class="right-img">
+                             <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
+                        </div>
                     </div>
-                    <div class="right-img">
-                         <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
-                    </div>
-                </div>
-        {% endcase %}
-    {% endfor %}
+            {% endcase %}
+        {% endfor %}
+    </div>
 </section>
 <style>
     {% for block in section.blocks %}
@@ -23,27 +25,32 @@
                     gap: {{ block.settings.gap | append: 'px' }};
                 }
                 .left-img, .right-img{
+                    max-width: 50%;
                     flex: 1;
                 }
                 .left-img img, .right-img img{
                     width: 100%;
                     display: block;
                 }
-                   {% if block.settings.width == 'Large' %}
-                        .img-wrapper-{{ block.id }}{
-                            width: 100%;
+                {% if block.settings.width == 'Large' %}
+                    .double-img-wrapper-{{ block.id }}{
+                        width: 100%;
                         }
-                    {% elsif block.settings.width == 'medium' %}
-                        .img-wrapper-{{ block.id }}{
-                            width: 75%;
-                            margin: auto;
-                        }
-                    {% elsif block.settings.width == 'small' %}
-                        .img-wrapper-{{ block.id }}{
-                            width: 50%;
-                            margin: auto;
-                        }
-                    {% endif %}
+                {% elsif block.settings.width == 'medium' %}
+                    .double-img-wrapper-{{ block.id }}{
+                        width: 75%;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == 'small' %}
+                    .double-img-wrapper-{{ block.id }}{
+                        width: 50%;
+                        margin: auto;
+                    }
+                {% endif %}
+                .container{
+                    background-color:#F2F2F2;
+                    width: 100%;
+                }
         {% endcase %}
     {% endfor %}
 </style>

@@ -1,15 +1,21 @@
-<section class="Single_Img_with_text-wrapper-{{ section.id }}">
-  <div class="img-wrapper-{{ section.id }}">
-    <img src="{{ section.settings.image | img_url: "master" }}" class="image-{{ section.id }}">
-    <div class="text-warpper-{{ section.id }}">
-        {{ section.settings.texts }} 
-        {% comment %} {{ section.settings.link_label }} {% endcomment %}
-         <a class="link" {% if section.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.link }}"{% endif %}>{{ section.settings.link_label | escape }}</a>
+<section class="container">
+    <div class="Single_Img_with_text-wrapper-{{ section.id }}">
+        <div class="img-wrapper-{{ section.id }}">
+            <img src="{{ section.settings.image | img_url: "master" }}" class="image-{{ section.id }}">
+            <div class="text-warpper-{{ section.id }}">
+                {{ section.settings.texts }} 
+                {% comment %} {{ section.settings.link_label }} {% endcomment %}
+                <a class="link" {% if section.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ section.settings.link }}"{% endif %}>{{ section.settings.link_label | escape }}</a>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <style>
+    .container{
+        background-color:#F2F2F2;
+        width: 100%;
+    }
     .Single_Img_with_text-wrapper-{{ section.id }}{
         width: 100%;
     }

@@ -1,35 +1,41 @@
-<section class="section-wrapper-{{ section.id }}">
-    {% for block in section.blocks %}
-        {% case block.type %}
-            {% when "text-block" %}
-                <div class="text-block-{{ block.id }}">
-                    <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }} text-block"> {{ block.settings.text-content }}</div>
-                </div>
-            {% when "spacer-block" %}
-                <div class="spacer-{{ block.id }}"> </div>
-            {% comment %} {% when "heading-block" %}
-            <div class="heading-{{ block.id }}"></div> {% endcomment %}
-            {% comment %} {%- when 'heading-block' -%} {% endcomment %}
-                {% comment %} <h2 class=" {{ block.settings.heading_size }}"> {% endcomment %}
-                {% comment %} <h2 class=" {{ block.settings.heading-alignment }}">
-                <span>{{ block.settings.heading | escape }}</span>
-                </h2> {% endcomment %}
-
-            {%- when 'heading-block' -%}
-                <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}">
-                    {{ block.settings.heading | replace: 'p>', 'span>' }}
-                    {% comment %} {{ block.settings.heading }} {% endcomment %}
-                </h2>
-            {%- when "image" -%}
-                <div class="img-wrapper">
-                    <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
-                </div>  
-        {% endcase %}
-    {% endfor %}
+<section class="container">
+    <div  class="section-wrapper-{{ section.id }}">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when "text-block" %}
+                    <div class="text-block-{{ block.id }}">
+                        <div class="block-{{ block.id }}-width-{{ block.settings.blog.width }} text-block"> {{ block.settings.text-content }}</div>
+                    </div>
+                {% when "spacer-block" %}
+                    <div class="spacer-{{ block.id }}"> </div>
+                {% comment %} {% when "heading-block" %}
+                <div class="heading-{{ block.id }}"></div> {% endcomment %}
+                {% comment %} {%- when 'heading-block' -%} {% endcomment %}
+                    {% comment %} <h2 class=" {{ block.settings.heading_size }}"> {% endcomment %}
+                    {% comment %} <h2 class=" {{ block.settings.heading-alignment }}">
+                    <span>{{ block.settings.heading | escape }}</span>
+                    </h2> {% endcomment %}
+    
+                {%- when 'heading-block' -%}
+                    <h2 class=" {{ block.settings.heading_size }} {{ block.settings.heading-alignment }}">
+                        {{ block.settings.heading | replace: 'p>', 'span>' }}
+                        {% comment %} {{ block.settings.heading }} {% endcomment %}
+                    </h2>
+                {%- when "image" -%}
+                    <div class="img-wrapper">
+                        <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
+                    </div>  
+            {% endcase %}
+        {% endfor %}
+    </div>
 </section>
 
 
 <style>
+     .container{
+        background-color:#F2F2F2;
+        width: 100%;
+    }
     .section-wrapper-{{ section.id }}{
         max-width: 600px;
         margin: auto;
