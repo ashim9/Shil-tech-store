@@ -1,0 +1,170 @@
+{% for block in section.blocks %}
+    {% case block.type %}
+    {% when "Single-Image-With-Text" %}
+        <div class="container-{{ section.id }}">
+            <div class="Single-Img-with-text-wrapper-{{ block.id }}">
+                <div class="img-wrapper-{{ block.id }}">
+                    <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
+                </div>
+                <div class="text-warpper-{{ block.id }}">
+                    {{ block.settings.texts }} 
+                </div>
+            </div>
+        </div>
+    {% endcase %}
+{% endfor %}
+
+<style>
+    .container-{{ section.id }}{
+        background-color: #F2F2F2;
+        width: 100%;
+    }
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "Single-Image-With-Text" %}
+                .Single-Img-with-text-wrapper-{{ block.id }}{
+                    padding-top: {{ block.settings.padding-top-bottom | append: 'px' }};
+                    padding-bottom: {{ block.settings.padding-top-bottom | append: 'px' }};
+                    padding-left: {{ block.settings.padding-left-right | append: 'px' }};
+                    padding-right: {{ block.settings.padding-left-right | append: 'px' }};
+                    display: flex;
+                    gap: 20px;
+                    width: 100%;
+                }
+                .image-{{ block.id }}{
+                    width: 100%;
+                    display: block;
+                }
+                .img-wrapper-{{ block.id }}, .text-warpper-{{ block.id }}{
+                    width: 50%;
+                }
+                {% if block.settings.width == 'large' %}
+                    div.img-wrapper-{{ block.id }}{
+                        width: 100%;
+                    }
+                {% elsif block.settings.width == 'medium' %}
+                    div.img-wrapper-{{ block.id }}{
+                        width: 75%;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == 'small' %}
+                    div.img-wrapper-{{ block.id }}{
+                        width: 50%;
+                        margin: auto;
+                    }
+                {% endif %}
+                .Single-Img-with-text-wrapper-{{ block.id }} .text-warpper-{{ block.id }} p, .text-warpper-{{ block.id }} a{
+                    font-size: {{ block.settings.font-size | append: "px" }};
+                    color: {{ block.settings.text-color }};
+                    font-family: {{ block.settings.font }};
+                    line-height: {{ block.settings.line-height }}px;
+                }
+                div.text-warpper-{{ block.id }} > p{
+                    margin: 0;
+                    padding: 10px 0;
+                }
+            {% endcase %}
+    {% endfor %}
+</style>
+
+{% schema %}
+  {
+    "name": "Single Image With Text",
+    "blocks": [
+        {
+            "name" : "Single Image With Text",
+            "type" : "Single-Image-With-Text",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Single-Image"
+                },
+                {
+                    "type": "select",
+                    "id": "width",
+                    "label": "Image Width",
+                    "options": [
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    }, 
+                    {
+                        "value": "small",
+                        "label": "Small"
+                    }, 
+                    {
+                        "value": "large",
+                        "label": "Full Width"
+                    }
+                    ],
+                    "default": "small"
+                },
+                {
+                    "type": "richtext",
+                    "id": "texts",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.</p>",
+                    "label": "Text"
+                },
+                {
+                    "type": "range",
+                    "id": "font-size",
+                    "label": "Change Font Size",
+                    "min": 10,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 15
+                },
+                {
+                    "type": "range",
+                    "id": "line-height",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 22,
+                    "label": "Line height"
+                },
+                {
+                    "type": "font",
+                    "id" : "font",
+                    "label": "Font-Family"
+                },
+                {
+                    "type": "color",
+                    "id": "text-color",
+                    "label": "Text Color",
+                    "default": "#333333"
+                },
+                {
+                    "type": "range",
+                    "label": "Padding top-bottom",
+                    "id": "padding-top-bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "label": "Padding left-right",
+                    "id": "padding-left-right",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                }
+        
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Single Image With Text"
+      }
+    ]
+  }
+{% endschema %}

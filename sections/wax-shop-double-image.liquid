@@ -1,20 +1,18 @@
-<section class="container">
-    <div class="double-image-{{ section.id }}">
-        {% for block in section.blocks %}
-            {% case block.type %}
-                {% when "double-image" %}
-                    <div class="double-img-wrapper-{{ block.id }}">
-                        <div class="left-img">
-                             <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
-                        </div>
-                        <div class="right-img">
-                             <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
-                        </div>
+<div class="container">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "double-image" %}
+                <div class="double-img-wrapper-{{ block.id }}">
+                    <div class="left-img-{{ block.id }}">
+                        <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
                     </div>
+                    <div class="right-img-{{ block.id }}">
+                        <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
+                    </div>
+                </div>
             {% endcase %}
-        {% endfor %}
-    </div>
-</section>
+    {% endfor %}
+</div>
 <style>
     {% for block in section.blocks %}
         {% case block.type %}
@@ -23,12 +21,16 @@
                     width: 100%;
                     display: flex;
                     gap: {{ block.settings.gap | append: 'px' }};
+                    padding-top: {{ block.settings.padding-top-bottom | append: 'px' }};
+                    padding-bottom: {{ block.settings.padding-top-bottom | append: 'px' }};
+                    padding-left: {{ block.settings.padding-left-right | append: 'px' }};
+                    padding-right: {{ block.settings.padding-left-right | append: 'px' }}
                 }
-                .left-img, .right-img{
+                .left-img-{{ block.id }}, .right-img-{{ block.id }}{
                     max-width: 50%;
                     flex: 1;
                 }
-                .left-img img, .right-img img{
+                .left-img-{{ block.id }} img, .right-img-{{ block.id }} img{
                     width: 100%;
                     display: block;
                 }
@@ -102,6 +104,26 @@
                     }
                     ],
                     "default": "small"
+                },
+                {
+                    "type": "range",
+                    "id": "padding-left-right",
+                    "label": "Padding left-right",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "id": "padding-top-bottom",
+                    "label": "Padding top-bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
                 }
             ]
         }

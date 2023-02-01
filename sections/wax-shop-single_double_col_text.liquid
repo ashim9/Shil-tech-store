@@ -8,10 +8,10 @@
                     </div>
                 {% when "double-text-block" %}
                     <div class="double-text-block-wrapper-{{ block.id }}">
-                        <div class="left_text">
+                        <div class="left_text-{{ block.id }}">
                             {{ block.settings.double-text-content-left }}
                         </div>
-                        <div class="right_text">
+                        <div class="right_text-{{ block.id }}">
                             {{ block.settings.double-text-content-right }}
                         </div>
                     </div> 
@@ -74,7 +74,7 @@
             gap: 20px;
             width: 100%
         }
-        .left_text, .right_text{
+        .left_text-{{ block.id }}, .right_text-{{ block.id }}{
             width: 50%;
         }
     {%- when 'spacer-block' -%}

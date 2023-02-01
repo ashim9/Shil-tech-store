@@ -1,229 +1,276 @@
-<section class="double-image-with-bg-{{ section.id }}">
-    {% for block in section.blocks %}
-        {% case block.type %}
-            {% when "double-image-with-bg" %}
-                <div class="container">
-                    <div class="double-img-with-text-wrapper-{{ block.id }}">
-                        <div class="double-img-wrapper-{{ block.id }}">
-                            <div class="left-image-with-text-wrapper">
-                                <div class="doubleImage-of-left">
-                                    <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
-                                </div>
-                                <div class="text-warpper-{{ block.id }} left-img-caption">
-                                    {{ block.settings.right-side-texts }} 
-                                </div> 
-                            </div>
-                            <div class="right-image-with-text-wrapper">
-                                <div class="doubleImage-of-right">
-                                    <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
-                                </div>
-                                <div class="text-warpper-{{ block.id }} right-img-caption">
-                                    {{ block.settings.Left-side-texts }} 
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
+<div class="double-image-with-bg-{{ section.id }}">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "double-image-with-bg" %}
+        <div class="double-img-with-text-wrapper-{{ block.id }}">
+            <div class="double-img-wrapper-{{ block.id }}">
+                <div class="doubleImage-of-left-{{ block.id }}">
+                    <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
                 </div>
-        {% endcase %}
-    {% endfor %}
-</section>
+                <div class="doubleImage-of-right-{{ block.id }}">
+                    <img src="{{ block.settings.right_image | img_url: "master" }}" class="image-{{ block.id }}">
+                </div>
+            </div>
+            <div class="texts-wrapper-{{ block.id }}">
+                <div class="img-caption-{{ block.id }} left-img-caption-{{ block.id }}">
+                    {{ block.settings.left-side-texts }}
+                </div>
+                <div class="img-caption-{{ block.id }} right-img-caption-{{ block.id }}">
+                    {{ block.settings.right-side-texts }}
+                </div>
+            </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
 <style>
-   
-    {% for block in section.blocks %}
-        {% case block.type %}
-            {%- when "double-image-with-bg" -%} 
-                *{
-                    box-sizing: border-box;
-                }
-                .container{
-                    background-color:#F2F2F2;
-                    width: 100%;
-                }
-                .double-img-with-text-wrapper-{{ block.id }}{
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                }
-                .double-img-wrapper-{{ block.id }}{
-                    width: 100%;
-                    display: flex;
-                }
-                .doubleImage-of-left, .doubleImage-of-right{
-                    background-color: #FFFFFF;
-                    width: 100%;
-                    min-width: 100%;
-                }
-                .doubleImage-of-left img, .doubleImage-of-right img{
-                    width: 100%;
-                    display: block;
-                }
-                .left-image-with-text-wrapper, .right-image-with-text-wrapper{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    max-width: 50%;
-                    flex: 1;
-                }
-                {% if block.settings.width == 'Large' %}
-                    .double-img-with-text-wrapper-{{ block.id }} {
-                        width: 100%;
-                    }
-                {% elsif block.settings.width == 'medium' %}
-                    .double-img-with-text-wrapper-{{ block.id }} {
-                        width: 75%;
-                        margin: auto;
-                    }
-                {% elsif block.settings.width == 'small' %}
-                    .double-img-with-text-wrapper-{{ block.id }} {
-                        width: 50%;
-                        margin: auto;
-                    }
-                {% endif %}
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {%- when "double-image-with-bg" -%}
+        .double-img-with-text-wrapper-{{ block.id }}{
+            width: 100%;
+            padding-top: {{ block.settings.padding-top-bottom | append: 'px' }};
+            padding-bottom: {{ block.settings.padding-top-bottom | append: 'px' }};
+            padding-left: {{ block.settings.padding-left-right | append: 'px' }};
+            padding-right: {{ block.settings.padding-left-right | append: 'px' }}
+        }
+        .double-image-with-bg-{{ section.id }}{
+             background-color: #F2F2F2;
+        }
+        .doubleImage-of-left-{{ block.id }}, .doubleImage-of-right-{{ block.id }} {
+            flex: 1;
+            background-color: #FFFFFF;
+            max-width: 50%;
+        }
+        .img-caption-{{ block.id }}{
+            width: 50%;
+        }
+        .doubleImage-of-left-{{ block.id }} img,
+        .doubleImage-of-right-{{ block.id }} img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .double-img-wrapper-{{ block.id }},
+        .texts-wrapper-{{ block.id }} {
+            display: flex;
+            width: 100%;
+        }
+        .left-img-caption-{{ block.id }}, .right-img-caption-{{ block.id }} {
+            padding-right: 40px;
+        }
+        {% if block.settings.width == 'large' %}
+            .double-img-with-text-wrapper-{{ block.id }}{
+                width: 100%;
+        }
+      {% elsif block.settings.width == 'medium' %}
+            .double-img-with-text-wrapper-{{ block.id }}{
+                width: 75%;
+                margin: auto;
+        }
+      {% elsif block.settings.width == 'small' %}
+            .double-img-with-text-wrapper-{{ block.id }}{
+                width: 50%;
+                margin: auto;
+            }
+      {% endif %}
+      .texts-wrapper-{{ block.id }} .img-caption-{{ block.id }} p, .texts-wrapper-{{ block.id }} .img-caption-{{ block.id }} a {
+        font-size: {{ block.settings.font-size | append: "px" }};
+        color: {{ block.settings.text-color }};
+        font-family: {{ block.settings.font }};
+        line-height: {{ block.settings.line-height }}px;
+      }
+        {% if block.settings.toggle_column == false and block.settings.width == 'small' %}
+            .doubleImage-of-right-{{ block.id }}{
+                padding: {{ block.settings.padding }}%;
+            }
+        {% elsif block.settings.toggle_column == true and block.settings.width == 'small' %}
+            .doubleImage-of-left-{{ block.id }}{
+                padding: {{ block.settings.padding }}%;
+            }
+        {% endif %}
+        {% if block.settings.toggle_column == false and block.settings.width == 'medium' %}
+            .doubleImage-of-right-{{ block.id }}{
+                padding: {{ block.settings.padding }}%;
+            }
+        {% elsif block.settings.toggle_column == true and block.settings.width == 'medium' %}
+            .doubleImage-of-left-{{ block.id }}{
+                padding: {{ block.settings.padding }}%;
+            }
+        {% endif %}
+        {% if block.settings.toggle_column == false and block.settings.width == 'large' %}
+            .doubleImage-of-right-{{ block.id }}{
+                padding: {{ block.settings.padding }}%;
+            }
+        {% elsif block.settings.toggle_column == true and block.settings.width == 'large' %}
+            .doubleImage-of-left-{{ block.id }}{
+                padding: {{ block.settings.padding }}%;
+            }
+        {% endif %}
+      p {
+        margin: 0;
+        padding-top: 10px;
+      }
+      {% if block.settings.toggle_left_img_caption == true %}
+        div.left-img-caption-{{ block.id }} {
+            display: none;
+        }
+        .texts-wrapper-{{ block.id }} {
+            justify-content: flex-end;
+        }
+      {% endif %}
+      {% if block.settings.toggle_right_img_caption == true %}
+        div.right-img-caption-{{ block.id }} {
+          display: none;
+        }
+        .texts-wrapper-{{ block.id }} {
+            justify-content: flex-start;
+        }
 
-                .double-img-with-text-wrapper-{{ block.id }}  .text-warpper-{{ block.id }} p, .double-img-with-text-wrapper-{{ block.id }}  .text-warpper-{{ block.id }} a{
-                    font-size: {{ block.settings.font-size | append: "px" }};
-                    color: {{ block.settings.text-color }};
-                    font-family: {{ block.settings.font }};
-                    line-height: {{ block.settings.line-height }}px;
-                }
-                {% if block.settings.toggle_column == true %}
-                    .doubleImage-of-left{
-                        padding: 45px 35px;
-                }
-                {% else %}
-                    .doubleImage-of-right{
-                        padding: 45px 35px;
-                }
-                {% endif %}
-                p{
-                    margin: 0;
-                    padding-top: 10px;
-                }
-                {% if block.settings.toggle_left_img_caption == true %}
-                    div.left-img-caption{
-                        display: none;
-                    }
-                {% endif %}
-                {% if block.settings.toggle_right_img_caption == true %} 
-                    div.right-img-caption{
-                        display: none;
-                    } 
-                {% endif %}
-        {% endcase %}
-    {% endfor %}
+      {% endif %}
+    {% endcase %}
+  {% endfor %}
 </style>
 
 {% schema %}
- {
-    "name" : "DoubleImage with bg",
+  {
+    "name": "DoubleImage with bg",
     "blocks": [
+      {
+        "name": "double image with bg",
+        "type": "double-image-with-bg",
+        "settings": [
         {
-            "name" : "double image with bg",
-            "type" : "double-image-with-bg",
-            "settings" :[
-                 {
-                    "type": "image_picker",
-                    "id": "left_image",
-                    "label": "Left-Image"
-                },
-                {
-                    "type": "image_picker",
-                    "id": "right_image",
-                    "label": "Right-Image"
-                },
-                {
-                    "type": "checkbox",
-                    "id": "toggle_column",
-                    "label": "Toggle Column", 
-                    "default": false
-                },
-                {
-                    "type": "checkbox",
-                    "id": "toggle_left_img_caption",
-                    "label": "Hide left img caption", 
-                    "default": false
-                },
-                {
-                    "type": "checkbox",
-                    "id": "toggle_right_img_caption",
-                    "label": "Hide right img caption", 
-                    "default": false
-                },
-                {
-                    "type": "select",
-                    "id": "width",
-                    "label": "Image Width",
-                    "options": [
-                    {
-                        "value": "medium",
-                        "label": "Medium"
-                    }, 
-                    {
-                        "value": "small",
-                        "label": "Half Width"
-                    }, 
-                    {
-                        "value": "large",
-                        "label": "Full Width"
-                    }
-                    ],
-                    "default": "small"
-                },
-                {
-                    "type": "richtext",
-                    "id": "right-side-texts",
-                    "default": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black </p>",
-                    "label": "Right side text"
-                },
-                {
-                    "type": "richtext",
-                    "id": "Left-side-texts",
-                    "default": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black </p>",
-                    "label": "Left side text"
-                },
-                {
-                    "type": "range",
-                    "id": "font-size",
-                    "label": "Change Font Size",
-                    "min": 12,
-                    "max": 50,
-                    "step": 1,
-                    "unit": "px",
-                    "default": 12
-                },
-                {
-                    "type": "range",
-                    "id": "line-height",
-                    "min": 0,
-                    "max": 50,
-                    "step": 1,
-                    "unit": "px",
-                    "default": 18,
-                    "label": "Line height"
-                },
-                {
-                    "type": "font",
-                    "id" : "font",
-                    "label": "Font-Family"
-                },
-                {
-                    "type": "color",
-                    "id": "text-color",
-                    "label": "Text Color",
-                    "default": "#333333"
-                }
-            ]
+            "type": "image_picker",
+            "id": "left_image",
+            "label": "Left-Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "right_image",
+            "label": "Right-Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "toggle_column",
+            "label": "Toggle Column",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "toggle_left_img_caption",
+            "label": "Hide left img caption",
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "toggle_right_img_caption",
+            "label": "Hide right img caption",
+            "default": false
+        }, 
+        {
+            "type": "select",
+            "id": "width",
+            "label": "Image Width",
+            "options": [
+              {
+                "value": "medium",
+                "label": "Medium"
+              }, {
+                "value": "small",
+                "label": "Small"
+              }, {
+                "value": "large",
+                "label": "Full Width"
+              }
+            ],
+            "default": "small"
+        }, 
+        {
+            "type": "range",
+            "id": "padding",
+            "label": "Shrink Image",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "unit": "%",
+            "default": 5
+        },
+        {
+            "type": "range",
+            "label": "Padding top-bottom",
+            "id": "padding-top-bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 0
+        },
+        {
+            "type": "range",
+            "label": "Padding left-right",
+            "id": "padding-left-right",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 0
+        }, 
+        {
+            "type": "richtext",
+            "id": "right-side-texts",
+            "default": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black </p>",
+            "label": "Right side text"
+        }, 
+        {
+            "type": "richtext",
+            "id": "left-side-texts",
+            "default": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black </p>",
+            "label": "Left side text"
+        },
+        {
+            "type": "range",
+            "id": "font-size",
+            "label": "Change Font Size",
+            "min": 12,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "default": 12
+        },
+        {
+            "type": "range",
+            "id": "line-height",
+            "min": 0,
+            "max": 50,
+            "step": 1,
+            "unit": "px",
+            "default": 18,
+            "label": "Line height"
+        }, 
+        {
+            "type": "font",
+            "id": "font",
+            "label": "Font-Family"
+        }, 
+        {
+            "type": "color",
+            "id": "text-color",
+            "label": "Text Color",
+            "default": "#333333"
         }
+        ]
+      }
     ],
     "presets": [
       {
         "name": "Double Image with bg",
-        "blocks":[
+        "blocks": [
           {
-              "type" : "double-image-with-bg"
+            "type": "double-image-with-bg"
           }
         ]
       }
     ]
-}
+  }
 {% endschema %}

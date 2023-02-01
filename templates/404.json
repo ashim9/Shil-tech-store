@@ -2,17 +2,50 @@
   "sections": {
     "main": {
       "type": "main-404",
+      "disabled": true,
       "settings": {
       }
     },
-    "content": {
-      "type": "wax-404",
+    "e56799f4-cf85-48c2-a233-3a593aa7a8a5": {
+      "type": "wax-blog",
+      "blocks": {
+        "e2dfab16-d74a-4fcc-8b6b-26e038196d0b": {
+          "type": "heading-block",
+          "settings": {
+            "heading": "<p>404 - Page Not Found<\/p>",
+            "heading_size": "h1",
+            "heading-alignment": "center"
+          }
+        },
+        "431b47c4-0de6-4028-bdd5-f57f1a730f1d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/404-Image-min.webp",
+            "height": "large"
+          }
+        },
+        "2ecd1324-02ae-4609-b1c8-aa6a60f64d92": {
+          "type": "text-block",
+          "settings": {
+            "text-content": "<p>Oops, it looks like the page you are looking for is no longer here...<br\/> Choose one of the links below or <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">click here to return home<\/a>.<\/p>",
+            "font-size": 16,
+            "line-height": 28,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "e2dfab16-d74a-4fcc-8b6b-26e038196d0b",
+        "431b47c4-0de6-4028-bdd5-f57f1a730f1d",
+        "2ecd1324-02ae-4609-b1c8-aa6a60f64d92"
+      ],
       "settings": {
       }
     }
   },
   "order": [
     "main",
-    "content"
+    "e56799f4-cf85-48c2-a233-3a593aa7a8a5"
   ]
 }

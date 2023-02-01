@@ -1,0 +1,232 @@
+<div class="container-{{ section.id }}">
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "Single-Image-With-Caption" %}
+                <div class="Single-Img-with-text-wrapper-{{ block.id }}">
+                    <div class="img-wrapper-{{ block.id }}">
+                        <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
+                        <div class="text-warpper-{{ block.id }}">
+                            {{ block.settings.texts }} 
+                            {% comment %} {{ block.settings.link_label }} {% endcomment %}
+                            <a class="link" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                        </div>
+                    </div>
+                </div>
+        {% endcase %}
+    {% endfor %}
+</div>
+
+<style>
+    .container-{{ section.id }}{
+        background-color: #F2F2F2;
+        width: 100%;
+    }
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "Single-Image-With-Caption" %}
+                .Single-Img-with-text-wrapper-{{ block.id }}{
+                    width: 100%;
+                    padding-top: {{ block.settings.padding-top-bottom | append: 'px' }};
+                    padding-bottom: {{ block.settings.padding-top-bottom | append: 'px' }};
+                    padding-left: {{ block.settings.padding-left-right | append: 'px' }};
+                    padding-right: {{ block.settings.padding-left-right | append: 'px' }}
+                }
+                .image-{{ block.id }}{
+                    width: 100%;
+                    display: block;
+                }
+                .img-wrapper-{{ block.id }}{
+                    width: 100%
+                }
+                {% if block.settings.width == 'large' %}
+                    div.img-wrapper-{{ block.id }}{
+                        width: 100%;
+                    }
+                {% elsif block.settings.width == 'medium' %}
+                    div.img-wrapper-{{ block.id }}{
+                        width: 75%;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == 'small' %}
+                    div.img-wrapper-{{ block.id }}{
+                        width: 50%;
+                        margin: auto;
+                    }
+                {% endif %}
+                {% if block.settings.text_toggle == true %}
+                    div.text-warpper-{{ block.id }} {
+                        display: none;
+                    }
+                {% endif %}
+
+                .img-wrapper-{{ block.id }}  .text-warpper-{{ block.id }} p, .img-wrapper-{{ block.id }}  .text-warpper-{{ block.id }} a, .link{
+                    font-size: {{ block.settings.font-size | append: "px" }};
+                    color: {{ block.settings.text-color }};
+                    font-family: {{ block.settings.font }};
+                    line-height: {{ block.settings.line-height }}px;
+
+                }
+                div.text-warpper-{{ block.id }} > p{
+                    margin: 10px 0;
+                }
+                .text-warpper-{{ block.id }}{
+                    width: 100%;
+                    display: flex;
+                    gap: 4px;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: {{ block.settings.text-alignment }};
+                }
+            {% endcase %}
+    {% endfor %}
+</style>
+
+{% schema %}
+  {
+    "name": "Single Image With Caption",
+    "blocks": [
+        {
+            "name" : "Single Image With Caption",
+            "type" : "Single-Image-With-Caption",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Single-Image"
+                },
+                {
+                    "type": "select",
+                    "id": "width",
+                    "label": "Image Width",
+                    "options": [
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    }, 
+                    {
+                        "value": "small",
+                        "label": "Half Width"
+                    }, 
+                    {
+                        "value": "large",
+                        "label": "Full Width"
+                    }
+                    ],
+                    "default": "small"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "text_toggle",
+                    "label": "Hide Text", 
+                    "default": false
+                },
+                {
+                    "type": "richtext",
+                    "id": "texts",
+                    "default": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black </p>",
+                    "label": "Text"
+                },
+                // {
+                //   "type": "text",
+                //   "id": "link_label",
+                //   "label": "link label"
+                // },
+                // {
+                //     "type": "url",
+                //     "id": "url_link",
+                //     "label": "Url link"
+                // },
+                
+                {
+                "type": "text",
+                "id": "link_label",
+                "label": "link label"
+                },
+                {
+                "type": "url",
+                "id": "link",
+                "label": "link"
+                },
+
+                {
+                    "type": "select",
+                    "label": "Text Align",
+                    "id": "text-alignment",
+                    "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    }, 
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    }, 
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                    ],
+                    "default": "left"
+                },
+                {
+                    "type": "range",
+                    "id": "font-size",
+                    "label": "Change Font Size",
+                    "min": 12,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 12
+                },
+                {
+                    "type": "range",
+                    "id": "line-height",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 18,
+                    "label": "Line height"
+                },
+                {
+                    "type": "font",
+                    "id" : "font",
+                    "label": "Font-Family"
+                },
+                {
+                    "type": "color",
+                    "id": "text-color",
+                    "label": "Text Color",
+                    "default": "#333333"
+                },
+                {
+                    "type": "range",
+                    "label": "Padding top-bottom",
+                    "id": "padding-top-bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "label": "Padding left-right",
+                    "id": "padding-left-right",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                }
+        
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Single Image With Caption"
+      }
+    ]
+  }
+{% endschema %}
