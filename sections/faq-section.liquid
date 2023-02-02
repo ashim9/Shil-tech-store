@@ -1,98 +1,65 @@
 {% for block in section.blocks %}
     {% case block.type %}
-    {% when "Single-Image-With-Text" %}
+    {% when "FAQ-section" %}
         <div class="container-{{ block.id }}">
-            <div class="Single-Img-with-text-wrapper-{{ block.id }}">
-                <div class="img-wrapper-{{ block.id }}">
-                    <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
+            <div class="faq-section-wrapper-{{ block.id }}">
+                <div class="question-{{ block.id }}">
+                    {{ block.settings.question-text }}
                 </div>
-                <div class="text-warpper-{{ block.id }}">
-                    {{ block.settings.texts }} 
+                <div class="answer-{{ block.id }}">
+                    {{ block.settings.answer-text }}
                 </div>
-            </div>
+            </div> 
         </div>
     {% endcase %}
 {% endfor %}
-
 <style>
-    
     {% for block in section.blocks %}
         {% case block.type %}
-            {% when "Single-Image-With-Text" %}
+            {% when "FAQ-section" %}
+                 {% if block.settings.width == "small" %}
+                    .faq-section-wrapper-{{ block.id }}{
+                        width: 50%;
+                        max-width: 600px;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == "medium" %}
+                    .faq-section-wrapper-{{ block.id }}{
+                        width: 75%;
+                        max-width: 967px;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == "large" %}
+                    .faq-section-wrapper-{{ block.id }}{
+                        width: 100%;
+                        max-width: 967px;
+                        margin: auto;
+                    }
+                {% endif %}
                 .container-{{ block.id }}{
                     background-color: #F2F2F2;
                     width: 100%;
                 }
-                .Single-Img-with-text-wrapper-{{ block.id }}{
-                    padding-top: {{ block.settings.padding-top | append: 'px' }};
-                    padding-bottom: {{ block.settings.padding-bottom | append: 'px' }};
-                    display: flex;
-                    gap: 20px;
-                    width: 100%;
-                    padding-left: 20px;
-                    padding-right: 20px;
-                }
-                {% comment %} .text-warpper-{{ block.id }}{
-                    background-color: {{ block.settings.color_accent }};
-                } {% endcomment %}
-                .image-{{ block.id }}{
-                    width: 100%;
-                    display: block;
-                }
-                .img-wrapper-{{ block.id }}, .text-warpper-{{ block.id }}{
-                    width: 50%;
-                }
-                {% if block.settings.width == 'large' %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
-                        width: 100%;
-                    }
-                    div.img-wrapper-{{ block.id }}{
-                        width: 65%;
-                    }
-                    div.text-warpper-{{ block.id }}{
-                        width: 35%;
-                    }
-                {% elsif block.settings.width == 'medium' %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
-                        width: 85%;
-                        margin: auto;
-                    }
-                    div.img-wrapper-{{ block.id }}{
-                        width: 60%;
-                        margin: auto;
-                    }
-                    div.text-warpper-{{ block.id }}{
-                        width: 40%;
-                    }
-                {% elsif block.settings.width == 'small' %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
-                        width: 75%;
-                        margin: auto;
-                    }
-                    div.img-wrapper-{{ block.id }}{
-                        width: 50%;
-                        margin: auto;
-                    }
-                    div.text-warpper-{{ block.id }}{
-                        width: 50%;
-                    }
-                {% endif %}
-                .Single-Img-with-text-wrapper-{{ block.id }} .text-warpper-{{ block.id }} p, .text-warpper-{{ block.id }} a{
+                .question-{{ block.id }} p{
                     font-size: {{ block.settings.font-size | append: "px" }};
-                    color: {{ block.settings.text-color }};
+                    color: {{ block.settings.question-text-color }};
                     font-family: {{ block.settings.font }};
                     line-height: {{ block.settings.line-height }}px;
                 }
-                div.text-warpper-{{ block.id }} > p{
-                    margin: 0;
+                .answer-{{ block.id }} p{
+                    font-size: {{ block.settings.font-size | append: "px" }};
+                    color: {{ block.settings.answer-text-color }};
+                    font-family: {{ block.settings.font }};
+                    line-height: {{ block.settings.line-height | append: "px" }};
+                    padding-top: {{ block.settings.padding-top | append: "px" }};
+                    padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
+                    padding-left: 20px;
+                    border-left: 2px solid red;
+                }
+                .faq-section-wrapper-{{ block.id }} p{
                     padding-top: 0;
                 }
-                {% if block.settings.toggle_column == true %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
-                        flex-direction: row-reverse;
-                    }
-                {% endif %}
-            {% endcase %}
+        {% endcase %}
     {% endfor %}
 </style>
 
@@ -101,27 +68,22 @@
     "name": "Single Image With Text",
     "blocks": [
         {
-            "name" : "Single Image With Text",
-            "type" : "Single-Image-With-Text",
+            "name" : "FAQ section",
+            "type" : "FAQ-section",
             "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "image",
-                    "label": "Single-Image"
-                },
                 {
                     "type": "select",
                     "id": "width",
-                    "label": "Image Width",
+                    "label": "Section Width",
                     "options": [
-                    {
-                        "value": "medium",
-                        "label": "Medium"
-                    }, 
                     {
                         "value": "small",
                         "label": "Small"
-                    }, 
+                    },
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    },  
                     {
                         "value": "large",
                         "label": "Full Width"
@@ -130,22 +92,16 @@
                     "default": "small"
                 },
                 {
-                    "type": "color",
-                    "id": "color_accent",
-                    "label": "Background Color",
-                    "default": "#F2F2F2"
-                },
-                {
-                    "type": "checkbox",
-                    "id": "toggle_column",
-                    "label": "Toggle Column",
-                    "default": false
+                    "type": "text",
+                    "id": "question-text",
+                    "default": "<p>This is the question, commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla?</p>",
+                    "label": "Question"
                 },
                 {
                     "type": "richtext",
-                    "id": "texts",
+                    "id": "answer-text",
                     "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.</p>",
-                    "label": "Text"
+                    "label": "Answer"
                 },
                 {
                     "type": "range",
@@ -174,7 +130,13 @@
                 },
                 {
                     "type": "color",
-                    "id": "text-color",
+                    "id": "question-text-color",
+                    "label": "Text Color",
+                    "default": "#E37730"
+                },
+                {
+                    "type": "color",
+                    "id": "answer-text-color",
                     "label": "Text Color",
                     "default": "#333333"
                 },
@@ -204,7 +166,7 @@
     ],
     "presets": [
       {
-        "name": "Single Image With Text"
+        "name": "FAQ Section"
       }
     ]
   }

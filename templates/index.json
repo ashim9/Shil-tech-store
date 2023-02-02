@@ -94,6 +94,12 @@
             "font": "Helvetica, Arial, sans-serif",
             "text-color": "#333333"
           }
+        },
+        "f0c5d288-b475-44ae-bc2a-59dfd9ef09da": {
+          "type": "spacer-block",
+          "settings": {
+            "spacer-height": 80
+          }
         }
       },
       "block_order": [
@@ -101,15 +107,10 @@
         "f7a318af-356c-4f21-8fb3-a6f9388bd526",
         "c57c45dd-8b8c-4270-b308-2c0a27121e84",
         "5342e893-9d2d-44e2-831a-7271b3bdc3c2",
-        "8682cd21-0eba-46eb-a49e-36d508785fbe"
+        "8682cd21-0eba-46eb-a49e-36d508785fbe",
+        "f0c5d288-b475-44ae-bc2a-59dfd9ef09da"
       ],
       "settings": {
-      }
-    },
-    "4ef9343d-2611-4c67-bafa-f2f27d4f8a9c": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 80
       }
     },
     "831a5474-6f78-465d-b1f5-6353a219c7fa": {
@@ -125,90 +126,85 @@
             "font": "Helvetica, Arial, sans-serif",
             "text-color": "#333333"
           }
+        },
+        "d25a5a53-ad72-40b9-9d5c-6f1dd8b7ed29": {
+          "type": "spacer-block",
+          "settings": {
+            "spacer-height": 80
+          }
         }
       },
       "block_order": [
-        "75ad4b57-0b22-480f-8ce7-55b0f954b727"
+        "75ad4b57-0b22-480f-8ce7-55b0f954b727",
+        "d25a5a53-ad72-40b9-9d5c-6f1dd8b7ed29"
       ],
       "settings": {
       }
     },
-    "1e789626-19b0-467d-bed9-02ea7d4d4de9": {
-      "type": "spacer-block",
+    "bb52e38a-3d28-47d2-87e3-1f18ee69f6ca": {
+      "type": "wax-shop-single_Img_with_caption",
+      "blocks": {
+        "6b5c02aa-1245-4d98-bd31-eef254bc2ce2": {
+          "type": "Single-Image-With-Caption",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
+            "width": "small",
+            "text_toggle": false,
+            "texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black<\/a> <\/p>",
+            "link_label": "",
+            "link": "",
+            "text-alignment": "left",
+            "font-size": 12,
+            "line-height": 18,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top-bottom": 0,
+            "padding-left-right": 0
+          }
+        },
+        "6c0ca728-4a60-4459-bde8-3bcb3db1c2b0": {
+          "type": "Single-Image-With-Caption",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
+            "width": "medium",
+            "text_toggle": false,
+            "texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
+            "link_label": "",
+            "link": "",
+            "text-alignment": "left",
+            "font-size": 12,
+            "line-height": 18,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top-bottom": 40,
+            "padding-left-right": 0
+          }
+        },
+        "f739136f-7a89-4b28-bcb1-00e098c4b38b": {
+          "type": "Single-Image-With-Caption",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
+            "width": "large",
+            "text_toggle": false,
+            "texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black<\/a> <\/p>",
+            "link_label": "",
+            "link": "",
+            "text-alignment": "center",
+            "font-size": 12,
+            "line-height": 18,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top-bottom": 0,
+            "padding-left-right": 0
+          }
+        }
+      },
+      "block_order": [
+        "6b5c02aa-1245-4d98-bd31-eef254bc2ce2",
+        "6c0ca728-4a60-4459-bde8-3bcb3db1c2b0",
+        "f739136f-7a89-4b28-bcb1-00e098c4b38b"
+      ],
       "settings": {
-        "spacer-height": 80
-      }
-    },
-    "3ab78183-36ea-4d7a-8572-9aed354fb48b": {
-      "type": "wax-shop-single_Img_with_text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
-        "width": "small",
-        "text_toggle": false,
-        "texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check <\/a>with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black<\/a> <\/p>",
-        "link_label": "",
-        "link": "",
-        "text-alignment": "left",
-        "font-size": 12,
-        "line-height": 18,
-        "font": "",
-        "text-color": "#333333",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "5bda6827-b1b9-4dca-b349-7aaed51854fb": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 40
-      }
-    },
-    "34444d6c-1ad6-4348-a89c-12c00973fda8": {
-      "type": "wax-shop-single_Img_with_text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
-        "width": "medium",
-        "text_toggle": false,
-        "texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
-        "link_label": "",
-        "link": "",
-        "text-alignment": "left",
-        "font-size": 12,
-        "line-height": 18,
-        "font": "",
-        "text-color": "#333333",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "a9ba5648-30a1-49bf-b47f-d95c5144437d": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 40
-      }
-    },
-    "5983c348-5857-4ff3-a798-a46625ff2387": {
-      "type": "wax-shop-single_Img_with_text",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
-        "width": "large",
-        "text_toggle": false,
-        "texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check <\/a>with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
-        "link_label": "",
-        "link": "",
-        "text-alignment": "center",
-        "font-size": 12,
-        "line-height": 18,
-        "font": "",
-        "text-color": "#333333",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "b9611b7d-769f-4710-8818-1baf5ddf3c0e": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 40
       }
     },
     "3ad5f9c8-f795-4ec9-bb5a-cd560ae82885": {
@@ -220,7 +216,9 @@
             "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
             "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
             "gap": 0,
-            "width": "small"
+            "width": "small",
+            "padding-left-right": 0,
+            "padding-top-bottom": 40
           }
         }
       },
@@ -230,26 +228,43 @@
       "settings": {
       }
     },
-    "6947d674-fcc4-40f8-872d-57f3674442a9": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 40
-      }
-    },
-    "50d0435b-8816-43fc-823b-adfe144bfa8d": {
+    "03bdfd7a-33f5-4150-8cca-c6256f5f63f1": {
       "type": "wax-shop-double-img-with-background",
       "blocks": {
-        "b6a3982a-58e8-4dda-ae7b-f779ea5ba141": {
+        "b4014e0d-0608-4c3c-8913-232768b51a9d": {
           "type": "double-image-with-bg",
           "settings": {
             "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
             "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
             "toggle_column": false,
+            "toggle_left_img_caption": true,
+            "toggle_right_img_caption": true,
+            "width": "small",
+            "padding": 6,
+            "padding-top-bottom": 0,
+            "padding-left-right": 0,
+            "right-side-texts": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black <\/p>",
+            "left-side-texts": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black <\/p>",
+            "font-size": 12,
+            "line-height": 18,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333"
+          }
+        },
+        "f8855e81-3471-4d99-b6dc-4bd88b39c6ac": {
+          "type": "double-image-with-bg",
+          "settings": {
+            "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
+            "toggle_column": true,
             "toggle_left_img_caption": false,
             "toggle_right_img_caption": false,
             "width": "small",
+            "padding": 6,
+            "padding-top-bottom": 40,
+            "padding-left-right": 0,
             "right-side-texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
-            "Left-side-texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
+            "left-side-texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check <\/a>with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black<\/a> <\/p>",
             "font-size": 12,
             "line-height": 18,
             "font": "Helvetica, Arial, sans-serif",
@@ -258,15 +273,10 @@
         }
       },
       "block_order": [
-        "b6a3982a-58e8-4dda-ae7b-f779ea5ba141"
+        "b4014e0d-0608-4c3c-8913-232768b51a9d",
+        "f8855e81-3471-4d99-b6dc-4bd88b39c6ac"
       ],
       "settings": {
-      }
-    },
-    "c3769b54-3aaf-4ec1-afb9-5363fc16e078": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 40
       }
     },
     "3d4659c7-7465-4697-9d9d-2f6d2516aadd": {
@@ -278,75 +288,51 @@
             "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
             "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
             "gap": 20,
-            "width": "small"
+            "width": "small",
+            "padding-left-right": 0,
+            "padding-top-bottom": 0
           }
-        }
-      },
-      "block_order": [
-        "28af104d-474b-4c07-84a4-5e8a2c5eb33d"
-      ],
-      "settings": {
-      }
-    },
-    "6c0a17b0-ef80-4ddc-b198-d638143f3057": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 70
-      }
-    },
-    "249b0dfc-779a-433f-9812-14301929f700": {
-      "type": "wax-shop-double-image",
-      "blocks": {
-        "c3f4a35a-3fef-4211-af9a-3e0ff88bda4f": {
+        },
+        "3a05db96-cf91-4b8c-96a7-a3c0d30901d3": {
           "type": "double-image",
           "settings": {
             "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
             "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
             "gap": 0,
-            "width": "medium"
+            "width": "medium",
+            "padding-left-right": 0,
+            "padding-top-bottom": 60
           }
-        }
-      },
-      "block_order": [
-        "c3f4a35a-3fef-4211-af9a-3e0ff88bda4f"
-      ],
-      "settings": {
-      }
-    },
-    "6f6a62c6-d8e5-4de2-bd26-b547c852daef": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 60
-      }
-    },
-    "b4c90d91-096f-42cf-a103-810bd7babce2": {
-      "type": "wax-shop-double-image",
-      "blocks": {
-        "3499bd81-9b04-47e0-aad0-1bf1ab4af0e9": {
+        },
+        "f7f5bd6b-832a-49a7-b5bd-1ad989ba0630": {
           "type": "double-image",
           "settings": {
             "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
             "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
             "gap": 20,
-            "width": "medium"
+            "width": "medium",
+            "padding-left-right": 0,
+            "padding-top-bottom": 0
           }
         }
       },
       "block_order": [
-        "3499bd81-9b04-47e0-aad0-1bf1ab4af0e9"
+        "28af104d-474b-4c07-84a4-5e8a2c5eb33d",
+        "3a05db96-cf91-4b8c-96a7-a3c0d30901d3",
+        "f7f5bd6b-832a-49a7-b5bd-1ad989ba0630"
       ],
       "settings": {
-      }
-    },
-    "1666e14f-095f-4adc-8424-b34acfa67386": {
-      "type": "spacer-block",
-      "settings": {
-        "spacer-height": 60
       }
     },
     "fb995b37-f409-491d-a27f-217303b965b5": {
       "type": "wax-shop-single_double_col_text",
       "blocks": {
+        "8d79ba7c-ae26-47f3-82d5-ba4d3d943b26": {
+          "type": "spacer-block",
+          "settings": {
+            "spacer-height": 60
+          }
+        },
         "1b0847ba-b68f-4483-80e6-7296ebf7387d": {
           "type": "single-text-block",
           "settings": {
@@ -358,10 +344,138 @@
             "font": "Helvetica, Arial, sans-serif",
             "text-color": "#333333"
           }
+        },
+        "90e88267-5780-4bbb-a6a3-fce91ab5b724": {
+          "type": "spacer-block",
+          "settings": {
+            "spacer-height": 40
+          }
         }
       },
       "block_order": [
-        "1b0847ba-b68f-4483-80e6-7296ebf7387d"
+        "8d79ba7c-ae26-47f3-82d5-ba4d3d943b26",
+        "1b0847ba-b68f-4483-80e6-7296ebf7387d",
+        "90e88267-5780-4bbb-a6a3-fce91ab5b724"
+      ],
+      "settings": {
+      }
+    },
+    "f983bc49-4401-4f04-8640-7fce97366836": {
+      "type": "wax-shop-double-img-with-background",
+      "blocks": {
+        "template--17666820931884__f983bc49-4401-4f04-8640-7fce97366836-1675251421ba039d20-0": {
+          "type": "double-image-with-bg",
+          "settings": {
+            "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
+            "toggle_column": false,
+            "toggle_left_img_caption": true,
+            "toggle_right_img_caption": true,
+            "width": "medium",
+            "padding": 8,
+            "padding-top-bottom": 0,
+            "padding-left-right": 0,
+            "right-side-texts": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black <\/p>",
+            "left-side-texts": "<p>Model wears Whiting Shirt Cosmic Papaya Check with Dean T Shirt Black and Pleat Trousers Black <\/p>",
+            "font-size": 12,
+            "line-height": 18,
+            "font": "",
+            "text-color": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "template--17666820931884__f983bc49-4401-4f04-8640-7fce97366836-1675251421ba039d20-0"
+      ],
+      "settings": {
+      }
+    },
+    "901616a0-15ad-4854-a620-772207b9ea77": {
+      "type": "wax-shop-single_double_col_text",
+      "blocks": {
+        "9b404fd9-24a1-47ac-93fc-cdd8131cc154": {
+          "type": "spacer-block",
+          "settings": {
+            "spacer-height": 100
+          }
+        },
+        "f89195a9-214b-41af-ac78-ae08a125d9f4": {
+          "type": "single-text-block",
+          "settings": {
+            "single-text-content": "<p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis, nulla at tempus feugiat, ligula diam tempus velit, quis semper urna sapien eu nunc. Nullam volutpat tellus ac quam convallis, sit amet tincidunt turpis hendrerit. Donec id blandit enim. Sed maximus malesuada nibh sed ultrices.”<\/p>",
+            "section-width": "small",
+            "custom-width": 50,
+            "font-size": 24,
+            "line-height": 30,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333"
+          }
+        },
+        "bfa4835a-39de-44af-94cd-d3678ddcd926": {
+          "type": "spacer-block",
+          "settings": {
+            "spacer-height": 40
+          }
+        }
+      },
+      "block_order": [
+        "9b404fd9-24a1-47ac-93fc-cdd8131cc154",
+        "f89195a9-214b-41af-ac78-ae08a125d9f4",
+        "bfa4835a-39de-44af-94cd-d3678ddcd926"
+      ],
+      "settings": {
+      }
+    },
+    "cc8c7a80-b213-41cd-85f3-3d3500b5a374": {
+      "type": "wax-shop-double-img-with-background",
+      "blocks": {
+        "template--17666820931884__cc8c7a80-b213-41cd-85f3-3d3500b5a374-16752588365594fabf-0": {
+          "type": "double-image-with-bg",
+          "settings": {
+            "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
+            "toggle_column": true,
+            "toggle_left_img_caption": false,
+            "toggle_right_img_caption": false,
+            "width": "medium",
+            "padding": 8,
+            "padding-top-bottom": 40,
+            "padding-left-right": 0,
+            "right-side-texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
+            "left-side-texts": "<p>Model wears <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Whiting Shirt Cosmic Papaya Check<\/a> with <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Dean T Shirt Black<\/a> and <a href=\"https:\/\/waxlondon.com\/\" target=\"_blank\" title=\"https:\/\/waxlondon.com\/\">Pleat Trousers Black <\/a><\/p>",
+            "font-size": 12,
+            "line-height": 18,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333"
+          }
+        }
+      },
+      "block_order": [
+        "template--17666820931884__cc8c7a80-b213-41cd-85f3-3d3500b5a374-16752588365594fabf-0"
+      ],
+      "settings": {
+      }
+    },
+    "723ab1ea-5877-463a-bf72-4e015ab6f913": {
+      "type": "wax-shop-img-with-text",
+      "blocks": {
+        "be64a18f-51d6-43c6-9b35-3d21cb3d11cd": {
+          "type": "Single-Image-With-Text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
+            "width": "large",
+            "texts": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.<\/p>",
+            "font-size": 15,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top-bottom": 0,
+            "padding-left-right": 0
+          }
+        }
+      },
+      "block_order": [
+        "be64a18f-51d6-43c6-9b35-3d21cb3d11cd"
       ],
       "settings": {
       }
@@ -370,25 +484,15 @@
   "order": [
     "cff263ab-1f25-4f1a-a07a-b82a3d5a508c",
     "9dadb11b-7536-403f-88ab-2a5ce925db64",
-    "4ef9343d-2611-4c67-bafa-f2f27d4f8a9c",
     "831a5474-6f78-465d-b1f5-6353a219c7fa",
-    "1e789626-19b0-467d-bed9-02ea7d4d4de9",
-    "3ab78183-36ea-4d7a-8572-9aed354fb48b",
-    "5bda6827-b1b9-4dca-b349-7aaed51854fb",
-    "34444d6c-1ad6-4348-a89c-12c00973fda8",
-    "a9ba5648-30a1-49bf-b47f-d95c5144437d",
-    "5983c348-5857-4ff3-a798-a46625ff2387",
-    "b9611b7d-769f-4710-8818-1baf5ddf3c0e",
+    "bb52e38a-3d28-47d2-87e3-1f18ee69f6ca",
     "3ad5f9c8-f795-4ec9-bb5a-cd560ae82885",
-    "6947d674-fcc4-40f8-872d-57f3674442a9",
-    "50d0435b-8816-43fc-823b-adfe144bfa8d",
-    "c3769b54-3aaf-4ec1-afb9-5363fc16e078",
+    "03bdfd7a-33f5-4150-8cca-c6256f5f63f1",
     "3d4659c7-7465-4697-9d9d-2f6d2516aadd",
-    "6c0a17b0-ef80-4ddc-b198-d638143f3057",
-    "249b0dfc-779a-433f-9812-14301929f700",
-    "6f6a62c6-d8e5-4de2-bd26-b547c852daef",
-    "b4c90d91-096f-42cf-a103-810bd7babce2",
-    "1666e14f-095f-4adc-8424-b34acfa67386",
-    "fb995b37-f409-491d-a27f-217303b965b5"
+    "fb995b37-f409-491d-a27f-217303b965b5",
+    "f983bc49-4401-4f04-8640-7fce97366836",
+    "901616a0-15ad-4854-a620-772207b9ea77",
+    "cc8c7a80-b213-41cd-85f3-3d3500b5a374",
+    "723ab1ea-5877-463a-bf72-4e015ab6f913"
   ]
 }

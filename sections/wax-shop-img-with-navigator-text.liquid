@@ -1,13 +1,21 @@
 {% for block in section.blocks %}
     {% case block.type %}
-    {% when "Single-Image-With-Text" %}
-        <div class="container-{{ block.id }}">
-            <div class="Single-Img-with-text-wrapper-{{ block.id }}">
+    {% when "image-with-navigator-text" %}
+        <div class="container-{{ section.id }}">
+            <div class="img-with-text-wrapper-{{ block.id }}">
                 <div class="img-wrapper-{{ block.id }}">
                     <img src="{{ block.settings.image | img_url: "master" }}" class="image-{{ block.id }}">
                 </div>
                 <div class="text-warpper-{{ block.id }}">
-                    {{ block.settings.texts }} 
+                    <div class="header-style-{{ block.id }}">
+                        <h2>Whiting Overshirt </h2>
+                    </div>
+                    <div class="description-wrapper-{{ block.id }}">
+                        {{ block.settings.texts }}
+                    </div>
+                    <div class="btn-{{ block.id }}">
+                        <a href="https://waxlondon.com/collections/winter-sale">Shop The Look</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -15,26 +23,19 @@
 {% endfor %}
 
 <style>
-    
+    .container-{{ section.id }}{
+        background-color: #F2F2F2;
+        width: 100%;
+    }
     {% for block in section.blocks %}
         {% case block.type %}
-            {% when "Single-Image-With-Text" %}
-                .container-{{ block.id }}{
-                    background-color: #F2F2F2;
-                    width: 100%;
-                }
-                .Single-Img-with-text-wrapper-{{ block.id }}{
+            {% when "image-with-navigator-text" %}
+                .img-with-text-wrapper-{{ block.id }}{
                     padding-top: {{ block.settings.padding-top | append: 'px' }};
                     padding-bottom: {{ block.settings.padding-bottom | append: 'px' }};
                     display: flex;
-                    gap: 20px;
                     width: 100%;
-                    padding-left: 20px;
-                    padding-right: 20px;
                 }
-                {% comment %} .text-warpper-{{ block.id }}{
-                    background-color: {{ block.settings.color_accent }};
-                } {% endcomment %}
                 .image-{{ block.id }}{
                     width: 100%;
                     display: block;
@@ -43,29 +44,29 @@
                     width: 50%;
                 }
                 {% if block.settings.width == 'large' %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
+                    .img-with-text-wrapper-{{ block.id }}{
                         width: 100%;
                     }
                     div.img-wrapper-{{ block.id }}{
-                        width: 65%;
-                    }
-                    div.text-warpper-{{ block.id }}{
-                        width: 35%;
-                    }
-                {% elsif block.settings.width == 'medium' %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
-                        width: 85%;
-                        margin: auto;
-                    }
-                    div.img-wrapper-{{ block.id }}{
                         width: 60%;
-                        margin: auto;
                     }
                     div.text-warpper-{{ block.id }}{
                         width: 40%;
                     }
+                {% elsif block.settings.width == 'medium' %}
+                    .img-with-text-wrapper-{{ block.id }}{
+                        width: 85%;
+                        margin: auto;
+                    }
+                    div.img-wrapper-{{ block.id }}{
+                        width: 55%;
+                        margin: auto;
+                    }
+                    div.text-warpper-{{ block.id }}{
+                        width: 45%;
+                    }
                 {% elsif block.settings.width == 'small' %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
+                    .img-with-text-wrapper-{{ block.id }}{
                         width: 75%;
                         margin: auto;
                     }
@@ -77,19 +78,51 @@
                         width: 50%;
                     }
                 {% endif %}
-                .Single-Img-with-text-wrapper-{{ block.id }} .text-warpper-{{ block.id }} p, .text-warpper-{{ block.id }} a{
+                .img-with-text-wrapper-{{ block.id }} .text-warpper-{{ block.id }} p, .text-warpper-{{ block.id }} a{
                     font-size: {{ block.settings.font-size | append: "px" }};
                     color: {{ block.settings.text-color }};
                     font-family: {{ block.settings.font }};
                     line-height: {{ block.settings.line-height }}px;
+                }
+                .header-style-{{ block.id }} h2{
+                    font-size: {{ block.settings.header-font-size | append: "px" }};
+                    color: {{ block.settings.header-text-color }};
+                    font-family: {{ block.settings.header-font }};
+                    line-height: {{ block.settings.header-line-height }}px;
                 }
                 div.text-warpper-{{ block.id }} > p{
                     margin: 0;
                     padding-top: 0;
                 }
                 {% if block.settings.toggle_column == true %}
-                    .Single-Img-with-text-wrapper-{{ block.id }}{
+                    .img-with-text-wrapper-{{ block.id }}{
                         flex-direction: row-reverse;
+                    }
+                {% endif %}
+                .text-warpper-{{ block.id }}{
+                    padding: 0 55px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    background-color: {{ block.settings.color_accent }};
+                }
+                .btn-{{ block.id }}{
+                    margin-top: 30px;
+                    display: block;
+                    background-color: #333333;
+                    width: 150px;
+                    border-radius: 25px;
+                }
+                .btn-{{ block.id }} a{
+                    display: block;
+                    padding: 13px 15px;
+                    text-align: center;
+                    color: #FFF;
+                    text-decoration: none;
+                }
+                {% if block.settings.hide-button == true %}
+                    .btn-{{ block.id }}{
+                        display: none;
                     }
                 {% endif %}
             {% endcase %}
@@ -101,8 +134,8 @@
     "name": "Single Image With Text",
     "blocks": [
         {
-            "name" : "Single Image With Text",
-            "type" : "Single-Image-With-Text",
+            "name" : "Image With Nvigator Text",
+            "type" : "image-with-navigator-text",
             "settings": [
                 {
                     "type": "image_picker",
@@ -112,7 +145,7 @@
                 {
                     "type": "select",
                     "id": "width",
-                    "label": "Image Width",
+                    "label": "Section Width",
                     "options": [
                     {
                         "value": "medium",
@@ -130,32 +163,38 @@
                     "default": "small"
                 },
                 {
-                    "type": "color",
-                    "id": "color_accent",
-                    "label": "Background Color",
-                    "default": "#F2F2F2"
-                },
-                {
                     "type": "checkbox",
                     "id": "toggle_column",
                     "label": "Toggle Column",
                     "default": false
                 },
                 {
+                    "type": "checkbox",
+                    "id": "hide-button",
+                    "label": "Hide Button",
+                    "default": false
+                },
+                {
                     "type": "richtext",
                     "id": "texts",
-                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.</p>",
+                    "default": "<p>Whiting Overshirt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat.</p>",
                     "label": "Text"
+                },
+                {
+                    "type": "color",
+                    "id": "color_accent",
+                    "label": "Background Color",
+                    "default": "#4E4E3F"
                 },
                 {
                     "type": "range",
                     "id": "font-size",
-                    "label": "Change Font Size",
+                    "label": "Description font size",
                     "min": 10,
                     "max": 50,
                     "step": 1,
                     "unit": "px",
-                    "default": 15
+                    "default": 16
                 },
                 {
                     "type": "range",
@@ -165,17 +204,48 @@
                     "step": 1,
                     "unit": "px",
                     "default": 22,
-                    "label": "Line height"
+                    "label": "Description line height"
                 },
                 {
                     "type": "font",
                     "id" : "font",
-                    "label": "Font-Family"
+                    "label": "Description font family"
                 },
                 {
                     "type": "color",
                     "id": "text-color",
                     "label": "Text Color",
+                    "default": "#333333"
+                },
+                {
+                    "type": "range",
+                    "id": "header-font-size",
+                    "label": "Header Font Size",
+                    "min": 10,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 24
+                },
+                {
+                    "type": "range",
+                    "id": "header-line-height",
+                    "min": 0,
+                    "max": 50,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 22,
+                    "label": "Header line height"
+                },
+                {
+                    "type": "font",
+                    "id" : "header-font",
+                    "label": "Header font family"
+                },
+                {
+                    "type": "color",
+                    "id": "header-text-color",
+                    "label": "header text color",
                     "default": "#333333"
                 },
                 {
@@ -204,7 +274,7 @@
     ],
     "presets": [
       {
-        "name": "Single Image With Text"
+        "name": "Image With Navigator Text"
       }
     ]
   }

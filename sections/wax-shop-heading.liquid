@@ -1,0 +1,191 @@
+{% for block in section.blocks %}
+    {% case block.type %}
+    {% when "Header-text" %}
+        <div class="container-{{ block.id }}">
+            <div class="header-text-wrapper-{{ block.id }}">
+                <div class="header-{{ block.id }}">
+                    {{ block.settings.header-texts }}
+                </div>
+                <div class="sub-header-{{ block.id }}">
+                    {{ block.settings.header-subtitle }}
+                </div>
+            </div> 
+        </div>
+    {% endcase %}
+{% endfor %}
+
+
+<style>
+    
+    {% for block in section.blocks %}
+        {% case block.type %}
+            {% when "Header-text" %}
+                .container-{{ block.id }}{
+                    background-color: #F2F2F2;
+                    width: 100%;
+                }
+                {% if block.settings.width == "small" %}
+                    .header-text-wrapper-{{ block.id }}{
+                        width: 50%;
+                        max-width: 600px;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == "medium" %}
+                    .header-text-wrapper-{{ block.id }}{
+                        width: 75%;
+                        max-width: 967px;
+                        margin: auto;
+                    }
+                {% elsif block.settings.width == "large" %}
+                    .header-text-wrapper-{{ block.id }}{
+                        width: 100%;
+                        max-width: 967px;
+                        margin: auto;
+                    }
+                {% endif %}
+                .header-{{ block.id }}{
+                    font-size: {{ block.settings.header-font-size | append: "px" }};
+                    color: {{ block.settings.text-color }};
+                    font-family: {{ block.settings.font }};
+                    line-height: {{ block.settings.header-line-height | append: "px" }};
+                    text-align: center;
+                    padding-top: 20px;
+                }
+                .sub-header-{{ block.id }}{
+                    font-size: {{ block.settings.subtitle-font-size | append: "px" }};
+                    color: {{ block.settings.text-color }};
+                    font-family: {{ block.settings.font }};
+                    line-height: {{ block.settings.subtitle-line-height | append: "px" }};
+                    text-align: center;
+                    padding-top: {{ block.settings.padding-top | append: "px" }};
+                    padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
+                }
+                .header-text-wrapper-{{ block.id }} p{
+                    padding-top: 0px;
+                }
+        {% endcase %}
+    {% endfor %}
+</style>
+
+{% schema %}
+  {
+    "name": "Header Text",
+    "blocks": [
+        {
+            "name" : "Header Text",
+            "type" : "Header-text",
+            "settings": [
+                {
+                    "type": "select",
+                    "id": "width",
+                    "label": "Section Width",
+                    "options": [
+                        {
+                            "value": "small",
+                            "label": "Small"
+                        }, 
+                        {
+                            "value": "medium",
+                            "label": "Medium"
+                        }, 
+                        {
+                            "value": "large",
+                            "label": "Full Width"
+                        }
+                        ],
+                        "default": "small"
+                },
+                {
+                    "type": "richtext",
+                    "id": "header-texts",
+                    "default": "<p>Journal Title, It's A Pretty Long One Too.</p>",
+                    "label": "Text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "header-subtitle",
+                    "default": "<p></p>",
+                    "label": "Text"
+                },
+                {
+                    "type": "range",
+                    "id": "header-font-size",
+                    "label": "Header font size",
+                    "min": 10,
+                    "max": 60,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 48
+                },
+                {
+                    "type": "range",
+                    "id": "subtitle-font-size",
+                    "label": "Header subtitle font size",
+                    "min": 10,
+                    "max": 60,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 12
+                },
+                {
+                    "type": "range",
+                    "id": "header-line-height",
+                    "min": 0,
+                    "max": 70,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 55,
+                    "label": "Header line height"
+                },
+                {
+                    "type": "range",
+                    "id": "subtitle-line-height",
+                    "min": 0,
+                    "max": 70,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 22,
+                    "label": "Subtitle line height"
+                },
+                {
+                    "type": "font",
+                    "id" : "font",
+                    "label": "Font-Family"
+                },
+                {
+                    "type": "color",
+                    "id": "text-color",
+                    "label": "Text Color",
+                    "default": "#333333"
+                },
+                {
+                    "type": "range",
+                    "label": "Padding Top from subtitle",
+                    "id": "padding-top",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                },
+                {
+                    "type": "range",
+                    "label": "Padding Bottom from subtitle",
+                    "id": "padding-bottom",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "default": 0
+                }
+        
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Header Text"
+      }
+    ]
+  }
+{% endschema %}
