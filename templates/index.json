@@ -1,47 +1,29 @@
 {
   "sections": {
-    "cff263ab-1f25-4f1a-a07a-b82a3d5a508c": {
-      "type": "image-with-text",
-      "disabled": true,
+    "c8ed8ede-ef3c-4690-997e-97fbc2d1415a": {
+      "type": "wax-shop-heading",
       "blocks": {
-        "template--17666619834668__cff263ab-1f25-4f1a-a07a-b82a3d5a508c-1674819822100dfbcd-0": {
-          "type": "heading",
+        "b39426c8-e5ed-40fa-ba76-db2424d2b3ca": {
+          "type": "Header-text",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "template--17666619834668__cff263ab-1f25-4f1a-a07a-b82a3d5a508c-1674819822100dfbcd-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "template--17666619834668__cff263ab-1f25-4f1a-a07a-b82a3d5a508c-1674819822100dfbcd-2": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "width": "small",
+            "header-texts": "<p>Journal Title, It's A Pretty Long One Too.<\/p>",
+            "header-subtitle": "<p>Posted on: 13\/10\/2022 – Words by Lizzie <\/p><p>Posted in Integrity at Wax, Fabrics, Cool Stuff<\/p>",
+            "header-font-size": 48,
+            "subtitle-font-size": 12,
+            "header-line-height": 55,
+            "subtitle-line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top": 20,
+            "padding-bottom": 80
           }
         }
       },
       "block_order": [
-        "template--17666619834668__cff263ab-1f25-4f1a-a07a-b82a3d5a508c-1674819822100dfbcd-0",
-        "template--17666619834668__cff263ab-1f25-4f1a-a07a-b82a3d5a508c-1674819822100dfbcd-1",
-        "template--17666619834668__cff263ab-1f25-4f1a-a07a-b82a3d5a508c-1674819822100dfbcd-2"
+        "b39426c8-e5ed-40fa-ba76-db2424d2b3ca"
       ],
       "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "9dadb11b-7536-403f-88ab-2a5ce925db64": {
@@ -462,27 +444,187 @@
         "be64a18f-51d6-43c6-9b35-3d21cb3d11cd": {
           "type": "Single-Image-With-Text",
           "settings": {
-            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
-            "width": "large",
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "width": "small",
+            "color_accent": "#f2f2f2",
+            "toggle_column": false,
             "texts": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.<\/p>",
             "font-size": 15,
             "line-height": 22,
             "font": "Helvetica, Arial, sans-serif",
             "text-color": "#333333",
-            "padding-top-bottom": 0,
-            "padding-left-right": 0
+            "padding-top": 60,
+            "padding-bottom": 0
+          }
+        },
+        "cfc458ff-02c5-4054-9b75-f7cec4545760": {
+          "type": "Single-Image-With-Text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "width": "small",
+            "color_accent": "#f2f2f2",
+            "toggle_column": true,
+            "texts": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.<\/p>",
+            "font-size": 15,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top": 60,
+            "padding-bottom": 60
           }
         }
       },
       "block_order": [
-        "be64a18f-51d6-43c6-9b35-3d21cb3d11cd"
+        "be64a18f-51d6-43c6-9b35-3d21cb3d11cd",
+        "cfc458ff-02c5-4054-9b75-f7cec4545760"
+      ],
+      "settings": {
+      }
+    },
+    "b428ba87-7738-4f78-8890-e9e4299e61ed": {
+      "type": "wax-shop-img-with-navigator-text",
+      "blocks": {
+        "a591aed4-0f48-432a-b12c-708346bde110": {
+          "type": "image-with-navigator-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "width": "small",
+            "toggle_column": false,
+            "hide-button": true,
+            "texts": "<p>Whiting Overshirt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat.<\/p>",
+            "color_accent": "#ffffff",
+            "font-size": 16,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "header-font-size": 24,
+            "header-line-height": 22,
+            "header-text-color": "#333333",
+            "padding-top": 0,
+            "padding-bottom": 0
+          }
+        },
+        "de119d37-4366-4861-a2c1-c4b536669ed6": {
+          "type": "image-with-navigator-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "width": "small",
+            "toggle_column": true,
+            "hide-button": false,
+            "texts": "<p>Whiting Overshirt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat.<\/p>",
+            "color_accent": "#4e4e3f",
+            "font-size": 16,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#ffffff",
+            "header-font-size": 24,
+            "header-line-height": 22,
+            "header-text-color": "#ffffff",
+            "padding-top": 0,
+            "padding-bottom": 0
+          }
+        },
+        "719f1a90-3b1c-44ac-9d40-d0eaa1b332fa": {
+          "type": "image-with-navigator-text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
+            "width": "small",
+            "toggle_column": false,
+            "hide-button": true,
+            "texts": "<p>Whiting Overshirt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat.<\/p>",
+            "color_accent": "#a8a897",
+            "font-size": 16,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "header-font-size": 24,
+            "header-line-height": 22,
+            "header-font": "Helvetica, Arial, sans-serif",
+            "header-text-color": "#333333",
+            "padding-top": 0,
+            "padding-bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "a591aed4-0f48-432a-b12c-708346bde110",
+        "de119d37-4366-4861-a2c1-c4b536669ed6",
+        "719f1a90-3b1c-44ac-9d40-d0eaa1b332fa"
+      ],
+      "settings": {
+      }
+    },
+    "c59dd081-f8a4-432c-bfb2-b507e4fc3a7a": {
+      "type": "wax-shop-img-with-text",
+      "blocks": {
+        "9fb9a5be-133b-41c4-93b6-2bfb21fed7b5": {
+          "type": "Single-Image-With-Text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
+            "width": "medium",
+            "color_accent": "#f2f2f2",
+            "toggle_column": false,
+            "texts": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.<\/p>",
+            "font-size": 15,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top": 100,
+            "padding-bottom": 40
+          }
+        },
+        "e6e44f87-4b58-4b68-ad73-cdbe3d77eb93": {
+          "type": "Single-Image-With-Text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/04-10-2022-WAX1465.jpg",
+            "width": "large",
+            "color_accent": "#f2f2f2",
+            "toggle_column": true,
+            "texts": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.<\/p>",
+            "font-size": 15,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "text-color": "#333333",
+            "padding-top": 0,
+            "padding-bottom": 80
+          }
+        }
+      },
+      "block_order": [
+        "9fb9a5be-133b-41c4-93b6-2bfb21fed7b5",
+        "e6e44f87-4b58-4b68-ad73-cdbe3d77eb93"
+      ],
+      "settings": {
+      }
+    },
+    "c25aacdc-3ef4-4175-b2a8-35396a09b453": {
+      "type": "faq-section",
+      "blocks": {
+        "dbe41ec3-ffd9-4ef2-a97b-67e26f92c0b4": {
+          "type": "FAQ-section",
+          "settings": {
+            "width": "small",
+            "question-text": "<p>This is the question, commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla?<\/p>",
+            "answer-text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu euismod ante, quis finibus odio. Aenean scelerisque consectetur pharetra. In condimentum est eu eros malesuada aliquam. Aenean iaculis ligula a quam vehicula mattis. Nulla fringilla bibendum erat id molestie. Quisque id arcu in libero euismod rutrum sed ut libero. Nunc et dolor non ex elementum varius vel ut ligula. Sed id felis ex. Aenean tristique lobortis est, vitae consequat turpis sagittis varius. Quisque pharetra, dui ornare iaculis consectetur, magna velit condimentum nulla, non tristique nisl lorem ac risus. Cras accumsan eu est in dignissim. Aenean ligula felis, rutrum in augue quis, consectetur porta libero. Nunc faucibus ornare risus nec accumsan. Donec sed nisi rutrum, mattis diam a, tempus risus. Morbi at lectus elementum, laoreet orci sit amet, rutrum ipsum. Integer vel aliquet risus, sed pharetra justo. Pellentesque commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla. Ut efficitur metus eros, quis consequat nunc tincidunt et. Sed eleifend arcu vel porta cursus. Mauris ultrices mauris vel lacus hendrerit sodales. Quisque a mattis turpis. Sed nisl purus, malesuada ac ultricies iaculis, iaculis id tellus. Morbi hendrerit ipsum sit amet lacus convallis tincidunt. Praesent quis libero rutrum, pharetra ex non, tincidunt justo. Nulla facilisi.<\/p>",
+            "font-size": 15,
+            "line-height": 22,
+            "font": "Helvetica, Arial, sans-serif",
+            "question-text-color": "#E37730",
+            "answer-text-color": "#333333",
+            "padding-top": 0,
+            "padding-bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "dbe41ec3-ffd9-4ef2-a97b-67e26f92c0b4"
       ],
       "settings": {
       }
     }
   },
   "order": [
-    "cff263ab-1f25-4f1a-a07a-b82a3d5a508c",
+    "c8ed8ede-ef3c-4690-997e-97fbc2d1415a",
     "9dadb11b-7536-403f-88ab-2a5ce925db64",
     "831a5474-6f78-465d-b1f5-6353a219c7fa",
     "bb52e38a-3d28-47d2-87e3-1f18ee69f6ca",
@@ -493,6 +635,9 @@
     "f983bc49-4401-4f04-8640-7fce97366836",
     "901616a0-15ad-4854-a620-772207b9ea77",
     "cc8c7a80-b213-41cd-85f3-3d3500b5a374",
-    "723ab1ea-5877-463a-bf72-4e015ab6f913"
+    "723ab1ea-5877-463a-bf72-4e015ab6f913",
+    "b428ba87-7738-4f78-8890-e9e4299e61ed",
+    "c59dd081-f8a4-432c-bfb2-b507e4fc3a7a",
+    "c25aacdc-3ef4-4175-b2a8-35396a09b453"
   ]
 }

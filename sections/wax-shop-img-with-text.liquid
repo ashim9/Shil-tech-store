@@ -29,8 +29,6 @@
                     display: flex;
                     gap: 20px;
                     width: 100%;
-                    padding-left: 20px;
-                    padding-right: 20px;
                 }
                 {% comment %} .text-warpper-{{ block.id }}{
                     background-color: {{ block.settings.color_accent }};
@@ -45,6 +43,9 @@
                 {% if block.settings.width == 'large' %}
                     .Single-Img-with-text-wrapper-{{ block.id }}{
                         width: 100%;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        margin: auto;
                     }
                     div.img-wrapper-{{ block.id }}{
                         width: 65%;
@@ -86,6 +87,12 @@
                 div.text-warpper-{{ block.id }} > p{
                     margin: 0;
                     padding-top: 0;
+                }
+                .text-warpper-{{ block.id }} p:empty{
+                    display: block;
+                    margin: 0;
+                    padding-top: 0;
+                    height: 10px;
                 }
                 {% if block.settings.toggle_column == true %}
                     .Single-Img-with-text-wrapper-{{ block.id }}{

@@ -51,13 +51,15 @@
                     color: {{ block.settings.answer-text-color }};
                     font-family: {{ block.settings.font }};
                     line-height: {{ block.settings.line-height | append: "px" }};
-                    padding-top: {{ block.settings.padding-top | append: "px" }};
-                    padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
                     padding-left: 20px;
-                    border-left: 2px solid red;
+                    border-left: 3px solid #E6C1A9;
                 }
                 .faq-section-wrapper-{{ block.id }} p{
                     padding-top: 0;
+                }
+                .question-{{ block.id }}{
+                    padding-top: {{ block.settings.padding-top | append: "px" }};
+                    padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
                 }
         {% endcase %}
     {% endfor %}
@@ -92,7 +94,7 @@
                     "default": "small"
                 },
                 {
-                    "type": "text",
+                    "type": "richtext",
                     "id": "question-text",
                     "default": "<p>This is the question, commodo eu quam vel hendrerit. Mauris non turpis fermentum, faucibus nulla quis, convallis nulla?</p>",
                     "label": "Question"
@@ -131,18 +133,18 @@
                 {
                     "type": "color",
                     "id": "question-text-color",
-                    "label": "Text Color",
+                    "label": "Question Text Color",
                     "default": "#E37730"
                 },
                 {
                     "type": "color",
                     "id": "answer-text-color",
-                    "label": "Text Color",
+                    "label": "Answer Text Color",
                     "default": "#333333"
                 },
                 {
                     "type": "range",
-                    "label": "Padding Top",
+                    "label": "Question: Padding Top",
                     "id": "padding-top",
                     "min": 0,
                     "max": 100,
@@ -152,7 +154,7 @@
                 },
                 {
                     "type": "range",
-                    "label": "Padding Bottom",
+                    "label": "Question: Padding Bottom",
                     "id": "padding-bottom",
                     "min": 0,
                     "max": 100,
