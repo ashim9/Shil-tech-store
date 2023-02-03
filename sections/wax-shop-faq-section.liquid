@@ -61,6 +61,14 @@
                     padding-top: {{ block.settings.padding-top | append: "px" }};
                     padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
                 }
+                {% comment %} @media only screen and (max-width: 375px){
+                    .faq-section-wrapper-{{ block.id }}{
+                        width: 100%;
+                        padding: 0 20px;
+                    }
+                    .answer-dda697cb-400e-41a7-a368-3e0ef4250d99 p {
+                        border-left: 2px solid #E6C1A9;
+                    } {% endcomment %}
         {% endcase %}
     {% endfor %}
 </style>
