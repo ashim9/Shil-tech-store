@@ -26,13 +26,13 @@
                 }
                 {% if block.settings.width == "small" %}
                     .header-text-wrapper-{{ block.id }}{
-                        width: 50%;
+                        {% comment %} width: 50%; {% endcomment %}
                         max-width: 600px;
                         margin: auto;
                     }
                 {% elsif block.settings.width == "medium" %}
                     .header-text-wrapper-{{ block.id }}{
-                        width: 75%;
+                        {% comment %} width: 75%; {% endcomment %}
                         max-width: 967px;
                         margin: auto;
                     }
@@ -64,6 +64,19 @@
                 }
                 .header-text-wrapper-{{ block.id }} p{
                     padding-top: 0px;
+                }
+                @media screen and  (max-width:992px){
+                    .header-text-wrapper-{{ block.id }}{
+                        padding: 0 15px;
+                    }
+                    .header-{{ block.id }}{
+                        font-size: 36px;
+                        line-height: 40px;
+                    }
+                    .sub-header-{{ block.id }} {
+                        padding-top: 20px;
+                        padding-bottom: 45px;
+                    }
                 }
         {% endcase %}
     {% endfor %}

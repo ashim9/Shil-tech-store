@@ -2,7 +2,7 @@
   {% for block in section.blocks %}
     {% case block.type %}
       {% when "double-image-with-bg" %}
-        <div class="double-img-with-text-wrapper-{{ block.id }}">
+        <div class="double-img-with-text-wrapper-{{ block.id }} doubleImg-{{ block.settings.width }}">
             <div class="left-img-text-wrapper-{{ block.id }}">
                 <div class="left-img-{{ block.id }}">
                     <img src="{{ block.settings.left_image | img_url: "master" }}" class="image-{{ block.id }}">
@@ -165,6 +165,17 @@
           display: none;
         }
       {% endif %}
+
+      @media screen and  (max-width:768px){
+      div.double-img-with-text-wrapper-{{ block.id }}{
+          width: 100%;
+          padding: 0 15px;
+        }
+      div.doubleImg-medium{
+        flex-direction: column;
+        width: 100%;
+      }
+      }
     {% endcase %}
   {% endfor %}
 </style>

@@ -125,6 +125,15 @@
                         display: none;
                     }
                 {% endif %}
+                @media screen and  (max-width:768px){
+                    div.img-with-text-wrapper-{{ block.id }}{
+                        flex-direction: column;
+                        width: 100%
+                    }
+                    div.img-wrapper-{{ block.id }}, .text-warpper-{{ block.id }}{
+                        width: 100%;
+                    }
+                }
             {% endcase %}
     {% endfor %}
 </style>

@@ -76,6 +76,17 @@
                     align-items: center;
                     justify-content: {{ block.settings.text-alignment }};
                 }
+                @media screen and  (max-width:768px){
+                div.img-wrapper-{{ block.id }}{
+                    width: 100%
+                }
+                .Single-Img-with-text-wrapper-{{ block.id }}{
+                   padding-left: 20px;
+                   padding-right: 20px;
+                   padding-bottom: 60px;
+
+                }
+            }
             {% endcase %}
     {% endfor %}
 </style>
