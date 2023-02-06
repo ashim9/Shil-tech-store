@@ -51,6 +51,26 @@
                         margin: auto;
                     }
                 {% endif %}
+                {% if block.settings.height == 'large' %}
+                    div.right-img-{{ block.id }}, div.left-img-{{ block.id }} {
+                        height: 730px;
+                    }
+                {% elsif block.settings.height == 'medium' %}
+                    div.right-img-{{ block.id }}, div.left-img-{{ block.id }} {
+                        height: 600px;
+                    }
+                {% elsif block.settings.height == 'small' %}
+                    div.right-img-{{ block.id }}, div.left-img-{{ block.id }} {
+                        height: 375px;
+                    }
+                    .image-{{ block.id }}{
+                        object-position: top;
+                    }
+                {% elsif block.settings.height == 'object-fit' %}
+                    div.right-img-{{ block.id }}, div.left-img-{{ block.id }} {
+                        height: 100%;
+                    }
+                {% endif %}
                 .container{
                     background-color:#F2F2F2;
                     width: 100%;
@@ -106,6 +126,30 @@
                     }
                     ],
                     "default": "small"
+                },
+                {
+                    "type": "select",
+                    "id": "height",
+                    "label": "Image height",
+                    "options": [
+                    {
+                        "value": "medium",
+                        "label": "Medium"
+                    }, 
+                    {
+                        "value": "small",
+                        "label": "Small"
+                    }, 
+                    {
+                        "value": "large",
+                        "label": "Full Height"
+                    },
+                    {
+                        "value": "object-fit",
+                        "label": "Object Fit"
+                    }
+                    ],
+                    "default": "object-fit"
                 },
                 {
                     "type": "range",

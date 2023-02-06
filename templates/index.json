@@ -268,7 +268,7 @@
           "type": "double-image",
           "settings": {
             "left_image": "shopify:\/\/shop_images\/04-10-2022-WAX1307.jpg",
-            "right_image": "shopify:\/\/shop_images\/04-10-2022-WAX1517.jpg",
+            "right_image": "shopify:\/\/shop_images\/404-Image-min.webp",
             "gap": 20,
             "width": "small",
             "padding-left-right": 0,

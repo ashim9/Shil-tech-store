@@ -52,13 +52,15 @@
                     padding-top: 20px;
                 }
                 .sub-header-{{ block.id }}{
+                    padding-top: {{ block.settings.padding-top | append: "px" }};
+                    padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
+                }
+                .sub-header-{{ block.id }} p, .sub-header-{{ block.id }} a{
                     font-size: {{ block.settings.subtitle-font-size | append: "px" }};
                     color: {{ block.settings.text-color }};
                     font-family: {{ block.settings.font }};
                     line-height: {{ block.settings.subtitle-line-height | append: "px" }};
                     text-align: center;
-                    padding-top: {{ block.settings.padding-top | append: "px" }};
-                    padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
                 }
                 .header-text-wrapper-{{ block.id }} p{
                     padding-top: 0px;
@@ -144,7 +146,7 @@
                     "max": 70,
                     "step": 1,
                     "unit": "px",
-                    "default": 22,
+                    "default": 16,
                     "label": "Subtitle line height"
                 },
                 {
