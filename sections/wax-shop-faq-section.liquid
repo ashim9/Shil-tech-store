@@ -61,13 +61,24 @@
                     padding-top: {{ block.settings.padding-top | append: "px" }};
                     padding-bottom: {{ block.settings.padding-bottom | append: "px" }};
                 }
+                 @media screen and  (max-width:768px){
+                    div.faq-section-wrapper-{{ block.id }}{
+                        width: 100%;
+                        max-width: 100%;
+                        padding: 20px 15px;
+                        margin: auto;
+                    }
+                    div.question-{{ block.id }}{
+                        padding-top: 15px;
+                    }
+                }
         {% endcase %}
     {% endfor %}
 </style>
 
 {% schema %}
   {
-    "name": "Single Image With Text",
+    "name": "FAQ Section",
     "blocks": [
         {
             "name" : "FAQ section",

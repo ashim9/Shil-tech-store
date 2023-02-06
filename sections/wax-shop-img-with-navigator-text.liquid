@@ -128,10 +128,15 @@
                 @media screen and  (max-width:768px){
                     div.img-with-text-wrapper-{{ block.id }}{
                         flex-direction: column;
-                        width: 100%
-                    }
-                    div.img-wrapper-{{ block.id }}, .text-warpper-{{ block.id }}{
                         width: 100%;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                    div.img-wrapper-{{ block.id }}, div.text-warpper-{{ block.id }}{
+                        width: 100%;
+                    }
+                    div.text-warpper-{{ block.id }}{
+                        padding: 10px 25px;
                     }
                 }
             {% endcase %}
