@@ -42,10 +42,16 @@
       ],
       "settings": {
       }
+    },
+    "417e0a34-61f5-41c3-a3f2-0ca6d6d43459": {
+      "type": "wax-blog",
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "e56799f4-cf85-48c2-a233-3a593aa7a8a5"
+    "e56799f4-cf85-48c2-a233-3a593aa7a8a5",
+    "417e0a34-61f5-41c3-a3f2-0ca6d6d43459"
   ]
 }
